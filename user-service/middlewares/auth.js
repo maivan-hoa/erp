@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
 
     const [tokenType, accessToken] = authorization.split(" ");
 
-    if (tokenType !== "Bear") return res.sendStatus(UNAUTHORIZED);
+    if (tokenType !== "Bearer") return res.sendStatus(UNAUTHORIZED);
 
     const { userId, userRole } = await jwt.verify(accessToken, ACCESS_TOKEN_SECRET);
     req.userId = userId;

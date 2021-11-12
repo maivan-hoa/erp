@@ -2,9 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const logger = require("morgan");
-const { PORT, mongoDbUrl } = require("./config");
+const { PORT } = require("./config");
 const authRoute = require("./routes/auth");
 const roleRoute = require("./routes/role");
+const userRoute = require("./routes/user");
 
 require("./models");
 
@@ -22,6 +23,7 @@ app.get("/", (req, res, next) => {
 
 app.use("/", authRoute);
 app.use("/roles", roleRoute);
+app.use("/users", userRoute);
 
 // 404
 app.use((req, res, next) => {

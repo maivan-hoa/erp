@@ -29,7 +29,7 @@ const UserSchema = new Schema({
 
     avatar: {
         type: String,
-        default: "https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+        default: "https://res.cloudinary.com/thiemmv-hust-1999/image/upload/v1636688309/sample.jpg",
     },
 
     password: {
@@ -45,6 +45,11 @@ const UserSchema = new Schema({
     updated_at: {
         type: Date,
         default: Date.now(),
+    },
+
+    cloudinary_id: {
+        type: String,
+        default: "sample",
     },
 
     role: {
