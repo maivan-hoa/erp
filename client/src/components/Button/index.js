@@ -4,7 +4,6 @@ const Button = styled.button`
     display: block;
     width: ${(props) => (props.block ? "100%" : "initial")};
     padding: 10px;
-    margin-top: 20px;
     background-color: ${(props) => (props.outline ? "#ffffff" : "var(--main-color)")};
     color: ${(props) => (props.outline ? "var(--main-color)" : "#ffffff")};
     cursor: pointer;

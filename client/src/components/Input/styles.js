@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    margin-top: 25px;
+    margin-bottom: 15px;
 
     label {
         display: block;

@@ -1,33 +1,43 @@
 const User = require("../models/User");
-const { NOT_FOUND, SALT_ROUNDS, AVATAR_DEFAULT, CLOUDINARY_ID_DEFAULT } = require("../config");
+const { NOT_FOUND, SALT_ROUNDS } = require("../config");
 const bcrypt = require("bcrypt");
-const cloudinary = require("../utils/cloudinary");
+const { PORT, BASE_URL } = require("../config");
+const fs = require("fs");
 
 const index = async (req, res) => {
-    const users = await User.find();
+    const users = await User.find().populate("role").lean();
     return res.send({ status: 1, result: users });
 };
 
 const store = async (req, res) => {
-    // Upload image to cloudinary
-    let result;
-    if (req.file) {
-        result = await cloudinary.uploader.upload(req.file.path);
+    // Upload image
+    let fileName = "";
+    if (req.files != null) {
+        let prev = Date.now();
+        let file = req.files.avatar;
+        fileName = prev + "_" + file.name;
+        let uploadDir = "./public/uploads/";
+        file.mv(uploadDir + fileName, (error) => {
+            if (error) {
+                throw error;
+            }
+        });
     }
     // Create new user
-    let user = new User({
-        email: req.body.email,
-        name: req.body.name,
-        phone: req.body.phone,
-        date_of_birth: req.body.date_of_birth,
-        store_id: req.body.store_id,
-        avatar: result?.secure_url || AVATAR_DEFAULT,
-        password: bcrypt.hashSync(req.body.password, SALT_ROUNDS),
-        role: req.body.role,
-        cloudinary_id: result?.public_id || CLOUDINARY_ID_DEFAULT,
-    });
+    let user = new User();
+    user.name = req.body.name;
+    user.email = req.body.email;
+    user.phone = req.body.phone;
+    user.store_id = req.body.store_id;
+    user.date_of_birth = req.body.date_of_birth;
+    user.password = bcrypt.hashSync(req.body.password, SALT_ROUNDS);
+    user.role = req.body.role;
+    if (fileName !== "") {
+        user.avatar_url = BASE_URL + PORT + "/uploads/" + fileName;
+        user.avatar_name = fileName;
+    }
     // Save user
-    await user.save();
+    user = await user.save();
     return res.send({ status: 1, result: user });
 };
 
@@ -42,28 +52,37 @@ const update = async (req, res) => {
     const id = req.params.id;
     let user = await User.findById(id);
     if (!user) return res.sendStatus(NOT_FOUND);
-    // Upload image to cloudinary
-    let result;
-    if (req.file) {
-        // Delete image from cloudinary
-        if (user.cloudinary_id !== CLOUDINARY_ID_DEFAULT) {
-            await cloudinary.uploader.destroy(user.cloudinary_id);
+    // Upload image
+    let fileName = "";
+    if (req.files != null) {
+        if (user.avatar_name !== "default.jpg") {
+            fs.unlinkSync("./public/uploads/" + user.avatar_name);
         }
-        result = await cloudinary.uploader.upload(req.file.path);
+        let prev = Date.now();
+        let file = req.files.avatar;
+        fileName = prev + "_" + file.name;
+        let uploadDir = "./public/uploads/";
+        file.mv(uploadDir + fileName, (error) => {
+            if (error) {
+                throw error;
+            }
+        });
     }
 
-    const data = {
-        email: req.body.email || user.email,
-        name: req.body.name || user.name,
-        phone: req.body.phone || user.phone,
-        date_of_birth: req.body.date_of_birth || user.date_of_birth,
-        store_id: req.body.store_id || user.store_id,
-        avatar: result?.secure_url || user.secure_url,
-        role: req.body.role || user.role,
-        cloudinary_id: result?.public_id || user.public_id,
-    };
+    const data = {};
+    data.email = req.body.email || user.email;
+    data.name = req.body.name || user.name;
+    data.phone = req.body.phone || user.phone;
+    data.date_of_birth = req.body.date_of_birth || user.date_of_birth;
+    data.store_id = req.body.store_id || user.store_id;
+    data.role = req.body.role || user.role;
 
-    user = await User.findByIdAndUpdate(id, data, { new: true });
+    if (fileName !== "") {
+        data.avatar_url = BASE_URL + PORT + "/uploads/" + fileName;
+        data.avatar_name = fileName;
+    }
+
+    user = await User.findByIdAndUpdate(id, data, { new: true }).populate("role").lean();
     return res.send({ status: 1, result: user });
 };
 
@@ -72,13 +91,14 @@ const destroy = async (req, res) => {
     // Find user by id
     let user = await User.findById(id);
     if (!user) return res.sendStatus(NOT_FOUND);
-    // Delete image from cloudinary
-    if (user.cloudinary_id !== CLOUDINARY_ID_DEFAULT) {
-        await cloudinary.uploader.destroy(user.cloudinary_id);
+
+    if (user.avatar_name !== "default.jpg") {
+        fs.unlinkSync("./public/uploads/" + user.avatar_name);
     }
+
     // Delete user from db
-    await user.remove();
-    return res.send({ status: 1 });
+    user = await user.remove();
+    return res.send({ status: 1, result: user });
 };
 
 module.exports = {

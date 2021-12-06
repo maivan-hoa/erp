@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, FastField } from "formik";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import * as Yup from "yup";
-import { Wrapper, FormField } from "./styles";
+import { Wrapper, Content } from "./styles";
+import { useDispatch, useSelector } from "react-redux";
+import { loginAsync } from "../../redux/authSlice";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
     const initialValues = {
         email: "",
         password: "",
@@ -16,12 +23,24 @@ const Login = () => {
         password: Yup.string().min(8, "Password must be at least 8 characters!").required("Password is required!"),
     });
 
+    const handleSubmit = (values) => {
+        dispatch(loginAsync(values));
+        history.push("/dashboard");
+    };
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            history.push("/dashboard");
+        } else {
+            history.push("/login");
+        }
+    }, [history, isAuthenticated]);
+
     return (
         <Wrapper>
-            <FormField>
+            <Content>
                 <h1>Login</h1>
-                {/* <p>It's free and only takes a minute</p> */}
-                <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values) => console.log(values)}>
+                <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values) => handleSubmit(values)}>
                     {(props) => {
                         return (
                             <Form>
@@ -47,7 +66,9 @@ const Login = () => {
                                     disable={false}
                                 />
 
-                                <Button block>Login</Button>
+                                <Button type='submit' block>
+                                    Login
+                                </Button>
                                 {/* <p className='bottom-text'>
                                     By clicking the Sign Up button, you agree to our
                                     <a href='/#'>Terms & Conditions</a> and
@@ -57,7 +78,7 @@ const Login = () => {
                         );
                     }}
                 </Formik>
-            </FormField>
+            </Content>
             {/* <footer>
                 <p>
                     Already have an account? <a href='/#'>Login here</a>

@@ -18,25 +18,25 @@ const Sidebar = ({ match }) => {
                         <li>
                             <NavLink exact to={`${match.url}`} activeClassName='selected'>
                                 <span className='ti-home'></span>
-                                <span>Home</span>
+                                <span>Tổng quan</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to={`${match.url}/teams`} activeClassName='selected'>
-                                <span className='ti-face-smile'></span>
-                                <span>Teams</span>
+                                <span className='ti-shopping-cart-full'></span>
+                                <span>Hóa đơn</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={`${match.url}/tasks`} activeClassName='selected'>
-                                <span className='ti-agenda'></span>
-                                <span>Tasks</span>
+                            <NavLink to={`${match.url}/stores`} activeClassName='selected'>
+                                <span className='ti-bag'></span>
+                                <span>Cửa hàng</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={`${match.url}/leaves`} activeClassName='selected'>
-                                <span className='ti-clipboard'></span>
-                                <span>Leaves</span>
+                            <NavLink to={`${match.url}/employees`} activeClassName='selected'>
+                                <span className='ti-user'></span>
+                                <span>Nhân viên</span>
                             </NavLink>
                         </li>
                         <li>

@@ -18,10 +18,10 @@ const login = async (req, res, next) => {
         if (bcrypt.compareSync(password, user.password)) {
             const userRole = user.role.slug ? user.role.slug : "nhan-vien";
             const accessToken = jwt.sign({ userId: user._id, userRole: userRole }, ACCESS_TOKEN_SECRET, {
-                expiresIn: "1h",
+                expiresIn: "24h",
             });
 
-            res.send({ status: 1, result: accessToken });
+            res.send({ user: user, token: accessToken });
         } else {
             return res.status(BAD_REQUEST).json({
                 messsge: "Invalid email or password.",
@@ -33,6 +33,16 @@ const login = async (req, res, next) => {
     }
 };
 
+const currentUser = async (req, res, next) => {
+    console.log(req.userId);
+    const currentUser = await User.findById(req.userId);
+    return res.send({
+        status: 1,
+        result: currentUser,
+    });
+};
+
 module.exports = {
     login,
+    currentUser,
 };

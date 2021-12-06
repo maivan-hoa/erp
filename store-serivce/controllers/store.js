@@ -20,14 +20,15 @@ const show = async (req, res) => {
 
 const update = async (req, res) => {
     const id = req.params.id;
-    let store = Store.findById(id);
+
+    let store = await Store.findById(id);
     if (!store) return res.sendStatus(NOTFOUND);
 
     const data = {
         name: req.body.name || store.name,
         number_employee: req.body.number_employee || store.number_employee,
         address: req.body.address || store.address,
-        namanager_idme: req.body.manager_id || store.manager_id,
+        manager_id: req.body.manager_id || store.manager_id,
     };
 
     store = await Store.findByIdAndUpdate(id, data, { new: true });
@@ -38,7 +39,7 @@ const destroy = async (req, res) => {
     const id = req.params.id;
     const store = await Store.findByIdAndDelete(id).lean();
     if (!store) return res.sendStatus(NOT_FOUND);
-    return res.send({ status: 1 });
+    return res.send({ status: 1, result: store });
 };
 
 module.exports = {

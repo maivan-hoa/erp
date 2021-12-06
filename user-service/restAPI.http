@@ -10,9 +10,13 @@ Content-Type: application/json
     "password": "1q2w3e4r"
 }
 
+### Get current user
+GET http://localhost:8001/current HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MThlMDExNjg3M2M3ZjQzOWExZWE0ZjciLCJ1c2VyUm9sZSI6ImdpYW0tZG9jIiwiaWF0IjoxNjM4MzY5MzgwLCJleHAiOjE2MzgzNjk0NDB9.d5KCpqIzChErG2Es22RqiDjBMzfCUsgTETHaqp6Rpbc
+
 ### Get roles
 GET http://localhost:8001/roles HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTg4ZGM0Nzg1ODhiYTVlMDAwNzI2YzQiLCJ1c2VyUm9sZSI6ImdpYW0tZG9jIiwiaWF0IjoxNjM2Njk1MjU0LCJleHAiOjE2MzY2OTg4NTR9.ktEqEpzm-fA0ixKwsQzp3swpSn_bQypEO9eM0Fk1GoA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MThlMDExNjg3M2M3ZjQzOWExZWE0ZjciLCJ1c2VyUm9sZSI6ImdpYW0tZG9jIiwiaWF0IjoxNjM4MzY4NDUzLCJleHAiOjE2MzgzNjg0NTN9.T48eD6Lp1SXsOjQXdQ9hWEPsglx7ljx1kQs2fui2Zhs
 
 ### Create role
 POST http://localhost:8001/roles HTTP/1.1
@@ -46,5 +50,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTg4Z
 
 ### Get users
 GET http://localhost:8001/users HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTg4ZGM0Nzg1ODhiYTVlMDAwNzI2YzQiLCJ1c2VyUm9sZSI6ImdpYW0tZG9jIiwiaWF0IjoxNjM2Njk1MjU0LCJleHAiOjE2MzY2OTg4NTR9.ktEqEpzm-fA0ixKwsQzp3swpSn_bQypEO9eM0Fk1GoA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MThlMDExNjg3M2M3ZjQzOWExZWE0ZjciLCJ1c2VyUm9sZSI6ImdpYW0tZG9jIiwiaWF0IjoxNjM4MzY4NjQ1LCJleHAiOjE2MzgzNjg2NzV9.aNZLX49Lnk0wtSpnT95hJh9ekxLQ0VBKozFv-wNCY_g
 

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     padding-top: 160px;
 `;
 
-export const FormField = styled.div`
+export const Content = styled.div`
     margin: 0 auto;
     max-width: 400px;
     background: white;

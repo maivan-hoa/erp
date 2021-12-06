@@ -67,10 +67,10 @@
     margin-left: 60px;
 }
 
-#sidebar-toggle:checked ~ .main-content header {
+/* #sidebar-toggle:checked ~ .main-content header {
     left: 60px;
     width: calc(100% - 60px);
-}
+} */
 
 .main-content {
     position: relative;
@@ -78,7 +78,7 @@
     transition: margin-left 500ms;
 }
 
-header {
+/* header {
     position: fixed;
     top: 0;
     left: 240px;
@@ -119,13 +119,12 @@ header {
     background-repeat: no-repeat;
     background-image: url("https://www.w3schools.com/tags/workplace.jpg");
     border-radius: 50%;
-}
+} */
 
 main {
-    margin-top: 60px;
     background-color: #f1f5f9;
-    min-height: 90vh;
-    padding: 1rem 3rem;
+    min-height: 100vh;
+    padding: 1rem;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -175,9 +174,9 @@ main {
         margin-left: 60px;
     }
 
-    #sidebar-toggle:checked ~ .main-content header {
+    /* #sidebar-toggle:checked ~ .main-content header {
         left: 60px;
-    }
+    } */
 }
 
 @media only screen and (max-width: 860px) {
@@ -187,9 +186,9 @@ main {
     }
 }
 
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
     header .search-wrapper,
     header .search-wrapper input {
         width: 80%;
     }
-}
+} */

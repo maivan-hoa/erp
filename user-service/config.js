@@ -11,9 +11,5 @@ module.exports = {
     INTERNAL_SERVER_ERROR: 500,
     HAS_MANAGE_ROLE: "giam-doc",
     HAS_MANAGE_USER: "giam-doc",
-    CLOUDINARY_CLOUD_NAME: "thiemmv-hust-1999",
-    CLOUDINARY_API_KEY: "358251599934995",
-    CLOUDINARY_API_SECRET: "UOj6hUOl6pzsCdafW0w1aNpcOkY",
-    AVATAR_DEFAULT: "https://res.cloudinary.com/thiemmv-hust-1999/image/upload/v1636688309/sample.jpg",
-    CLOUDINARY_ID_DEFAULT: "sample",
+    BASE_URL: "http://localhost:",
 };

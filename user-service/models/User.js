@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { PORT, BASE_URL } = require("../config");
 
 const UserSchema = new Schema({
     email: {
@@ -27,9 +28,9 @@ const UserSchema = new Schema({
         required: true,
     },
 
-    avatar: {
+    avatar_url: {
         type: String,
-        default: "https://res.cloudinary.com/thiemmv-hust-1999/image/upload/v1636688309/sample.jpg",
+        default: BASE_URL + PORT + "/uploads/default.jpg",
     },
 
     password: {
@@ -47,9 +48,9 @@ const UserSchema = new Schema({
         default: Date.now(),
     },
 
-    cloudinary_id: {
+    avatar_name: {
         type: String,
-        default: "sample",
+        default: "default.jpg",
     },
 
     role: {
