@@ -1,0 +1,185 @@
+{
+  "resultCode": 1,
+  "sizeInEachStore": [
+    {
+      "Size": 151315,
+      "Store": 1
+    },
+    {
+      "Size": 202307,
+      "Store": 2
+    },
+    {
+      "Size": 37392,
+      "Store": 3
+    },
+    {
+      "Size": 205863,
+      "Store": 4
+    },
+    {
+      "Size": 34875,
+      "Store": 5
+    },
+    {
+      "Size": 202505,
+      "Store": 6
+    },
+    {
+      "Size": 70713,
+      "Store": 7
+    },
+    {
+      "Size": 155078,
+      "Store": 8
+    },
+    {
+      "Size": 125833,
+      "Store": 9
+    },
+    {
+      "Size": 126512,
+      "Store": 10
+    },
+    {
+      "Size": 207499,
+      "Store": 11
+    },
+    {
+      "Size": 112238,
+      "Store": 12
+    },
+    {
+      "Size": 219622,
+      "Store": 13
+    },
+    {
+      "Size": 200898,
+      "Store": 14
+    },
+    {
+      "Size": 123737,
+      "Store": 15
+    },
+    {
+      "Size": 57197,
+      "Store": 16
+    },
+    {
+      "Size": 93188,
+      "Store": 17
+    },
+    {
+      "Size": 120653,
+      "Store": 18
+    },
+    {
+      "Size": 203819,
+      "Store": 19
+    },
+    {
+      "Size": 203742,
+      "Store": 20
+    },
+    {
+      "Size": 140167,
+      "Store": 21
+    },
+    {
+      "Size": 119557,
+      "Store": 22
+    },
+    {
+      "Size": 114533,
+      "Store": 23
+    },
+    {
+      "Size": 203819,
+      "Store": 24
+    },
+    {
+      "Size": 128107,
+      "Store": 25
+    },
+    {
+      "Size": 152513,
+      "Store": 26
+    },
+    {
+      "Size": 204184,
+      "Store": 27
+    },
+    {
+      "Size": 206302,
+      "Store": 28
+    },
+    {
+      "Size": 93638,
+      "Store": 29
+    },
+    {
+      "Size": 42988,
+      "Store": 30
+    },
+    {
+      "Size": 203750,
+      "Store": 31
+    },
+    {
+      "Size": 203007,
+      "Store": 32
+    },
+    {
+      "Size": 39690,
+      "Store": 33
+    },
+    {
+      "Size": 158114,
+      "Store": 34
+    },
+    {
+      "Size": 103681,
+      "Store": 35
+    },
+    {
+      "Size": 39910,
+      "Store": 36
+    },
+    {
+      "Size": 39910,
+      "Store": 37
+    },
+    {
+      "Size": 39690,
+      "Store": 38
+    },
+    {
+      "Size": 184109,
+      "Store": 39
+    },
+    {
+      "Size": 155083,
+      "Store": 40
+    },
+    {
+      "Size": 196321,
+      "Store": 41
+    },
+    {
+      "Size": 39690,
+      "Store": 42
+    },
+    {
+      "Size": 41062,
+      "Store": 43
+    },
+    {
+      "Size": 39910,
+      "Store": 44
+    },
+    {
+      "Size": 118221,
+      "Store": 45
+    }
+  ]
+}
