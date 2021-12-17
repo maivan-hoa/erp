@@ -10,8 +10,6 @@ const CreateStore = ({ setOpenModal, data, stores }) => {
         }
     });
 
-    console.log(data);
-
     return (
         <Wrapper>
             <Content>

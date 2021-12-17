@@ -2,12 +2,10 @@ const Product = require("../models/Product");
 const { PORT, BASE_URL } = require("../config");
 const fs = require("fs");
 
-
 const index = async (req, res) => {
     const products = await Product.find();
     return res.send({ status: 1, result: products });
 };
-
 
 const store = async (req, res) => {
     // Upload image
@@ -33,14 +31,13 @@ const store = async (req, res) => {
     product.description = req.body.description;
 
     if (fileName !== "") {
-        product.avatar_url = BASE_URL + PORT + "/uploads/" + fileName;
-        product.avatar_name = fileName;
+        product.photo_url = BASE_URL + PORT + "/uploads/" + fileName;
+        product.photo_name = fileName;
     }
     // Save user
     product = await product.save();
     return res.send({ status: 1, result: product });
 };
-
 
 const show = async (req, res) => {
     const id = req.params.id;
@@ -48,7 +45,6 @@ const show = async (req, res) => {
     if (!product) return res.sendStatus(NOTFOUND);
     return res.send({ status: 1, result: product });
 };
-
 
 const update = async (req, res) => {
     const id = req.params.id;
@@ -58,8 +54,8 @@ const update = async (req, res) => {
     // Upload image
     let fileName = "";
     if (req.files != null) {
-        if (product.avatar_name !== "default.jpg") {
-            fs.unlinkSync("./public/uploads/" + product.avatar_name);
+        if (product.photo_name !== "default.jpg") {
+            fs.unlinkSync("./public/uploads/" + product.photo_name);
         }
         let prev = Date.now();
         let file = req.files.avatar;
@@ -82,27 +78,25 @@ const update = async (req, res) => {
     };
 
     if (fileName !== "") {
-        data.avatar_url = BASE_URL + PORT + "/uploads/" + fileName;
-        data.avatar_name = fileName;
+        data.photo_url = BASE_URL + PORT + "/uploads/" + fileName;
+        data.photo_name = fileName;
     }
 
     product = await Product.findByIdAndUpdate(id, data, { new: true });
     return res.send({ status: 1, result: product });
 };
 
-
 const destroy = async (req, res) => {
     const id = req.params.id;
     const product = await Store.findByIdAndDelete(id).lean();
     if (!product) return res.sendStatus(NOT_FOUND);
 
-    if (product.avatar_name !== "default.jpg") {
-        fs.unlinkSync("./public/uploads/" + product.avatar_name);
+    if (product.photo_name !== "default.jpg") {
+        fs.unlinkSync("./public/uploads/" + product.photo_name);
     }
 
     return res.send({ status: 1, result: product });
 };
-
 
 module.exports = {
     index,
@@ -111,5 +105,3 @@ module.exports = {
     update,
     destroy,
 };
-
-

@@ -43,19 +43,14 @@ const ProductSchema = new Schema({
         default: Date.now(),
     },
 
-    avatar_url: {
+    photo_url: {
         type: String,
         default: BASE_URL + PORT + "/uploads/default.jpg",
     },
 
-    avatar_name: {
+    photo_name: {
         type: String,
         default: "default.jpg",
-    },
-
-    store_id: {
-        type: Schema.Types.ObjectId,
-        ref: "store",
     },
 });
 
