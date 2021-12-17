@@ -1,0 +1,187 @@
+{
+  "data": [
+    {
+      "Store": 1,
+      "Weekly_Sales": 1575894.2428270404
+    },
+    {
+      "Store": 2,
+      "Weekly_Sales": 1935640.8052735853
+    },
+    {
+      "Store": 3,
+      "Weekly_Sales": 421537.7035129677
+    },
+    {
+      "Store": 4,
+      "Weekly_Sales": 2204588.6578931916
+    },
+    {
+      "Store": 5,
+      "Weekly_Sales": 333901.0737509921
+    },
+    {
+      "Store": 6,
+      "Weekly_Sales": 1489307.9364530835
+    },
+    {
+      "Store": 7,
+      "Weekly_Sales": 530356.5922619049
+    },
+    {
+      "Store": 8,
+      "Weekly_Sales": 929408.8711225857
+    },
+    {
+      "Store": 9,
+      "Weekly_Sales": 574855.0876961576
+    },
+    {
+      "Store": 10,
+      "Weekly_Sales": 1813390.684205794
+    },
+    {
+      "Store": 11,
+      "Weekly_Sales": 1313325.619438952
+    },
+    {
+      "Store": 12,
+      "Weekly_Sales": 1010569.9014493035
+    },
+    {
+      "Store": 13,
+      "Weekly_Sales": 2064254.7634897316
+    },
+    {
+      "Store": 14,
+      "Weekly_Sales": 1814505.3915314465
+    },
+    {
+      "Store": 15,
+      "Weekly_Sales": 590035.5949440665
+    },
+    {
+      "Store": 16,
+      "Weekly_Sales": 498227.62942460313
+    },
+    {
+      "Store": 17,
+      "Weekly_Sales": 952172.3724991037
+    },
+    {
+      "Store": 18,
+      "Weekly_Sales": 1156712.3350552928
+    },
+    {
+      "Store": 19,
+      "Weekly_Sales": 1391690.2491643715
+    },
+    {
+      "Store": 20,
+      "Weekly_Sales": 2161205.0535972873
+    },
+    {
+      "Store": 21,
+      "Weekly_Sales": 702536.4663578823
+    },
+    {
+      "Store": 22,
+      "Weekly_Sales": 1091238.6565051689
+    },
+    {
+      "Store": 23,
+      "Weekly_Sales": 1387498.3519682696
+    },
+    {
+      "Store": 24,
+      "Weekly_Sales": 1346688.7627602017
+    },
+    {
+      "Store": 25,
+      "Weekly_Sales": 719139.905535351
+    },
+    {
+      "Store": 26,
+      "Weekly_Sales": 986324.7614072795
+    },
+    {
+      "Store": 27,
+      "Weekly_Sales": 1687960.582816575
+    },
+    {
+      "Store": 28,
+      "Weekly_Sales": 1381926.6866460568
+    },
+    {
+      "Store": 29,
+      "Weekly_Sales": 580851.4116531765
+    },
+    {
+      "Store": 30,
+      "Weekly_Sales": 445957.3628063738
+    },
+    {
+      "Store": 31,
+      "Weekly_Sales": 1383320.8502027234
+    },
+    {
+      "Store": 32,
+      "Weekly_Sales": 1221217.4676782049
+    },
+    {
+      "Store": 33,
+      "Weekly_Sales": 259368.4923739371
+    },
+    {
+      "Store": 34,
+      "Weekly_Sales": 985843.9927950734
+    },
+    {
+      "Store": 35,
+      "Weekly_Sales": 811600.7602598262
+    },
+    {
+      "Store": 36,
+      "Weekly_Sales": 283130.0189871795
+    },
+    {
+      "Store": 37,
+      "Weekly_Sales": 549996.6889115326
+    },
+    {
+      "Store": 38,
+      "Weekly_Sales": 436000.32397849386
+    },
+    {
+      "Store": 39,
+      "Weekly_Sales": 1588179.7585343767
+    },
+    {
+      "Store": 40,
+      "Weekly_Sales": 968513.9647446823
+    },
+    {
+      "Store": 41,
+      "Weekly_Sales": 1352271.727684658
+    },
+    {
+      "Store": 42,
+      "Weekly_Sales": 561998.1445112557
+    },
+    {
+      "Store": 43,
+      "Weekly_Sales": 616756.5242228453
+    },
+    {
+      "Store": 44,
+      "Weekly_Sales": 351287.4863927375
+    },
+    {
+      "Store": 45,
+      "Weekly_Sales": 788880.9990482139
+    }
+  ],
+  "resultCode": 1,
+  "week": 44,
+  "year": 2012
+}

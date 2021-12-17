@@ -1,0 +1,17 @@
+{
+  "numberType": [
+    {
+      "Store": 22,
+      "Type": "A"
+    },
+    {
+      "Store": 17,
+      "Type": "B"
+    },
+    {
+      "Store": 6,
+      "Type": "C"
+    }
+  ],
+  "resultCode": 1
+}

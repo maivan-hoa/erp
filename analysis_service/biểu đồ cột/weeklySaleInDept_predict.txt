@@ -1,0 +1,316 @@
+{
+  "data": [
+    {
+      "Dept": 1,
+      "Weekly_Sales": 33073.54660714288
+    },
+    {
+      "Dept": 2,
+      "Weekly_Sales": 44815.09767857144
+    },
+    {
+      "Dept": 3,
+      "Weekly_Sales": 9513.938035714285
+    },
+    {
+      "Dept": 4,
+      "Weekly_Sales": 36621.354642857164
+    },
+    {
+      "Dept": 5,
+      "Weekly_Sales": 27544.590714285707
+    },
+    {
+      "Dept": 6,
+      "Weekly_Sales": 4330.251428571429
+    },
+    {
+      "Dept": 7,
+      "Weekly_Sales": 22379.816428571412
+    },
+    {
+      "Dept": 8,
+      "Weekly_Sales": 38889.26500000002
+    },
+    {
+      "Dept": 9,
+      "Weekly_Sales": 44392.52299107144
+    },
+    {
+      "Dept": 10,
+      "Weekly_Sales": 28854.243273809527
+    },
+    {
+      "Dept": 11,
+      "Weekly_Sales": 25808.341607142855
+    },
+    {
+      "Dept": 12,
+      "Weekly_Sales": 9164.425178571424
+    },
+    {
+      "Dept": 13,
+      "Weekly_Sales": 38868.69482142856
+    },
+    {
+      "Dept": 14,
+      "Weekly_Sales": 12656.908928571429
+    },
+    {
+      "Dept": 16,
+      "Weekly_Sales": 7330.6633928571455
+    },
+    {
+      "Dept": 17,
+      "Weekly_Sales": 7698.698112012984
+    },
+    {
+      "Dept": 18,
+      "Weekly_Sales": 14122.66267857142
+    },
+    {
+      "Dept": 19,
+      "Weekly_Sales": 1393.6307142857133
+    },
+    {
+      "Dept": 20,
+      "Weekly_Sales": 2973.220821428571
+    },
+    {
+      "Dept": 21,
+      "Weekly_Sales": 8076.308750000006
+    },
+    {
+      "Dept": 22,
+      "Weekly_Sales": 8104.16071428572
+    },
+    {
+      "Dept": 23,
+      "Weekly_Sales": 22555.001249999998
+    },
+    {
+      "Dept": 24,
+      "Weekly_Sales": 6633.623749999999
+    },
+    {
+      "Dept": 25,
+      "Weekly_Sales": 11118.612976190476
+    },
+    {
+      "Dept": 26,
+      "Weekly_Sales": 8157.26388392857
+    },
+    {
+      "Dept": 27,
+      "Weekly_Sales": 1846.5033928571431
+    },
+    {
+      "Dept": 28,
+      "Weekly_Sales": 849.9103571428575
+    },
+    {
+      "Dept": 29,
+      "Weekly_Sales": 4720.732857142859
+    },
+    {
+      "Dept": 30,
+      "Weekly_Sales": 2661.2782142857145
+    },
+    {
+      "Dept": 31,
+      "Weekly_Sales": 1489.9458928571426
+    },
+    {
+      "Dept": 32,
+      "Weekly_Sales": 6144.426104870136
+    },
+    {
+      "Dept": 33,
+      "Weekly_Sales": 6330.6872318594105
+    },
+    {
+      "Dept": 34,
+      "Weekly_Sales": 11099.602142857144
+    },
+    {
+      "Dept": 35,
+      "Weekly_Sales": 2213.9428571428575
+    },
+    {
+      "Dept": 36,
+      "Weekly_Sales": 1461.3405357142856
+    },
+    {
+      "Dept": 37,
+      "Weekly_Sales": 2594.4560119047615
+    },
+    {
+      "Dept": 38,
+      "Weekly_Sales": 85890.545
+    },
+    {
+      "Dept": 40,
+      "Weekly_Sales": 59189.415178571435
+    },
+    {
+      "Dept": 41,
+      "Weekly_Sales": 1496.9050000000007
+    },
+    {
+      "Dept": 42,
+      "Weekly_Sales": 7665.2816071428515
+    },
+    {
+      "Dept": 44,
+      "Weekly_Sales": 6072.15339285714
+    },
+    {
+      "Dept": 45,
+      "Weekly_Sales": 34.94942857142858
+    },
+    {
+      "Dept": 46,
+      "Weekly_Sales": 18212.95892857142
+    },
+    {
+      "Dept": 47,
+      "Weekly_Sales": 99.88785714285714
+    },
+    {
+      "Dept": 48,
+      "Weekly_Sales": 2704.1428571428573
+    },
+    {
+      "Dept": 49,
+      "Weekly_Sales": 9729.893207270408
+    },
+    {
+      "Dept": 51,
+      "Weekly_Sales": 47.950178571428566
+    },
+    {
+      "Dept": 52,
+      "Weekly_Sales": 2284.2834369004004
+    },
+    {
+      "Dept": 54,
+      "Weekly_Sales": 16.429632936507932
+    },
+    {
+      "Dept": 55,
+      "Weekly_Sales": 11218.720357142856
+    },
+    {
+      "Dept": 56,
+      "Weekly_Sales": 948.0885714285714
+    },
+    {
+      "Dept": 58,
+      "Weekly_Sales": 4116.651785714285
+    },
+    {
+      "Dept": 59,
+      "Weekly_Sales": 336.2492857142855
+    },
+    {
+      "Dept": 60,
+      "Weekly_Sales": 1116.9250000000004
+    },
+    {
+      "Dept": 67,
+      "Weekly_Sales": 6871.616071428568
+    },
+    {
+      "Dept": 71,
+      "Weekly_Sales": 1779.8296428571432
+    },
+    {
+      "Dept": 72,
+      "Weekly_Sales": 45603.90625000001
+    },
+    {
+      "Dept": 74,
+      "Weekly_Sales": 8436.07285714286
+    },
+    {
+      "Dept": 77,
+      "Weekly_Sales": 312.8730357142858
+    },
+    {
+      "Dept": 78,
+      "Weekly_Sales": 160.83999999999997
+    },
+    {
+      "Dept": 79,
+      "Weekly_Sales": 34449.80500000003
+    },
+    {
+      "Dept": 80,
+      "Weekly_Sales": 18400.32482142859
+    },
+    {
+      "Dept": 81,
+      "Weekly_Sales": 29505.137321428578
+    },
+    {
+      "Dept": 82,
+      "Weekly_Sales": 19952.279642857142
+    },
+    {
+      "Dept": 83,
+      "Weekly_Sales": 5246.346607142855
+    },
+    {
+      "Dept": 85,
+      "Weekly_Sales": 3519.090535714287
+    },
+    {
+      "Dept": 87,
+      "Weekly_Sales": 51777.285714285696
+    },
+    {
+      "Dept": 90,
+      "Weekly_Sales": 86837.72999999995
+    },
+    {
+      "Dept": 91,
+      "Weekly_Sales": 58597.065892857136
+    },
+    {
+      "Dept": 92,
+      "Weekly_Sales": 143456.2653571429
+    },
+    {
+      "Dept": 93,
+      "Weekly_Sales": 71925.11821428571
+    },
+    {
+      "Dept": 94,
+      "Weekly_Sales": 60434.30910714287
+    },
+    {
+      "Dept": 95,
+      "Weekly_Sales": 117131.69303571424
+    },
+    {
+      "Dept": 96,
+      "Weekly_Sales": 36400.32678571426
+    },
+    {
+      "Dept": 97,
+      "Weekly_Sales": 34481.59571428572
+    },
+    {
+      "Dept": 98,
+      "Weekly_Sales": 12795.697678571423
+    },
+    {
+      "Dept": 99,
+      "Weekly_Sales": 147.93285714285716
+    }
+  ],
+  "resultCode": 1,
+  "store": 1,
+  "week": 44,
+  "year": 2012
+}
