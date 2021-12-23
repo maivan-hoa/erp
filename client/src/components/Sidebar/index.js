@@ -9,7 +9,7 @@ const Sidebar = ({ match }) => {
                 <div className='sidebar-header'>
                     <h3 className='brand'>
                         <span className='ti-unlink'></span>
-                        <span>easywire</span>
+                        <span>VinMart</span>
                     </h3>
                     <label htmlFor='sidebar-toggle' className='ti-menu-alt'></label>
                 </div>
@@ -40,15 +40,15 @@ const Sidebar = ({ match }) => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={`${match.url}/projects`} activeClassName='selected'>
-                                <span className='ti-folder'></span>
-                                <span>Projects</span>
+                            <NavLink to={`${match.url}/products`} activeClassName='selected'>
+                                <span className='ti-layout-grid3'></span>
+                                <span>Sản phẩm</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={`${match.url}/timesheet`} activeClassName='selected'>
-                                <span className='ti-time'></span>
-                                <span>Timesheet</span>
+                            <NavLink to={`${match.url}/warehouses`} activeClassName='selected'>
+                                <span className='ti-server'></span>
+                                <span>Kho hàng</span>
                             </NavLink>
                         </li>
                         <li>

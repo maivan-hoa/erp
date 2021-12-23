@@ -5,7 +5,7 @@ import { Wrapper } from "./styles";
 const Input = (props) => {
     const { field, form, type, label, placeholder, disabled } = props;
 
-    const { name } = field; // name, valus, onChange, onBlur
+    const { name } = field; // name, values, onChange, onBlur
 
     const { errors, touched } = form;
 

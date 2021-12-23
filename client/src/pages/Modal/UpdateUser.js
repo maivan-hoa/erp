@@ -8,7 +8,7 @@ import SelectField from "../../components/SelectField";
 import { useDispatch } from "react-redux";
 import { updateUserAsync } from "../../redux/userSlice";
 
-const UpdateStore = ({ setOpenModal, stores, roles, currentUser }) => {
+const UpdateUser = ({ setOpenModal, stores, roles, currentUser }) => {
     const dispatch = useDispatch();
 
     const options = stores.map((store) => ({ value: store.id, label: store.name }));
@@ -123,4 +123,4 @@ const UpdateStore = ({ setOpenModal, stores, roles, currentUser }) => {
     );
 };
 
-export default UpdateStore;
+export default UpdateUser;

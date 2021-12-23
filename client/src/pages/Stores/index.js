@@ -61,8 +61,10 @@ const Store = () => {
         },
     ];
 
-    const handleDelete = (id) => {
-        dispatch(deleteStoreAsync(id));
+    const handleDelete = (store) => {
+        if (window.confirm("Sản phẩm " + store.name + " sẽ bị xóa !") === true) {
+            dispatch(deleteStoreAsync(store.id));
+        }
     };
 
     return (

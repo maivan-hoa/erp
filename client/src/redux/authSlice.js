@@ -16,7 +16,7 @@ export const loginAsync = createAsyncThunk("login", async (payload) => {
     return res;
 });
 
-export const todoSlice = createSlice({
+export const authSlice = createSlice({
     name: "auth",
     initialState: initialState,
     reducers: {
@@ -33,20 +33,7 @@ export const todoSlice = createSlice({
         [loginAsync.fulfilled]: (state, action) => {
             return { ...action.payload, isAuthenticated: true };
         },
-        // [getTodosAsync.fulfilled]: (state, action) => {
-        //     return action.payload.todos;
-        // },
-        // [addTodoAsync.fulfilled]: (state, action) => {
-        //     state.push(action.payload.todo);
-        // },
-        // [toggleCompleteAsync.fulfilled]: (state, action) => {
-        //     const index = state.findIndex((todo) => todo.id === action.payload.todo.id);
-        //     state[index].completed = action.payload.todo.completed;
-        // },
-        // [deleteTodoAsync.fulfilled]: (state, action) => {
-        //     return state.filter((todo) => todo.id !== action.payload.id);
-        // },
     },
 });
 
-export default todoSlice.reducer;
+export default authSlice.reducer;

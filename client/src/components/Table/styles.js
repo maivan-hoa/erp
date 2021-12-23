@@ -62,7 +62,7 @@ export const TableRow = styled.tr`
 `;
 
 export const TableData = styled.td`
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 1rem;
     color: var(--color-dark);
 `;

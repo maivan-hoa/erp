@@ -8,7 +8,7 @@ import SelectField from "../../components/SelectField";
 import { useDispatch } from "react-redux";
 import { addUserAsync } from "../../redux/userSlice";
 
-const CreateStore = ({ setOpenModal, stores, roles }) => {
+const CreateUser = ({ setOpenModal, stores, roles }) => {
     const dispatch = useDispatch();
 
     const options = stores.map((store) => ({ value: store.id, label: store.name }));
@@ -135,4 +135,4 @@ const CreateStore = ({ setOpenModal, stores, roles }) => {
     );
 };
 
-export default CreateStore;
+export default CreateUser;

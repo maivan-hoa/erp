@@ -2,7 +2,7 @@ import React from "react";
 import { Content, Wrapper, ButtonLocal, Avatar, Image } from "./styles";
 import { ReactTable, TableBody, TableRow, TableData } from "../../components/Table/styles";
 
-const CreateStore = ({ setOpenModal, data, stores }) => {
+const DetailUser = ({ setOpenModal, data, stores }) => {
     let storeName = "";
     stores.forEach((store) => {
         if (store.id === data.storeId) {
@@ -72,4 +72,4 @@ const CreateStore = ({ setOpenModal, data, stores }) => {
     );
 };
 
-export default CreateStore;
+export default DetailUser;
