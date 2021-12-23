@@ -8,13 +8,8 @@ const ProductSchema = new Schema({
         required: true,
     },
 
-    price: {
-        type: Number,
-        required: true,
-    },
-
-    count: {
-        type: Number,
+    sku: {
+        type: String,
         required: true,
     },
 
@@ -23,14 +18,20 @@ const ProductSchema = new Schema({
         required: true,
     },
 
-    store_id: {
-        type: String,
-        required: true,
-    },
-
     description: {
         type: String,
-        required: false,
+    },
+
+    origin: {
+        type: String,
+    },
+
+    preserve: {
+        type: String,
+    },
+
+    weight: {
+        type: String,
     },
 
     created_at: {
@@ -52,8 +53,13 @@ const ProductSchema = new Schema({
         type: String,
         default: "default.jpg",
     },
+
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: "category",
+    },
 });
 
-const Product = mongoose.model("product", ProductSchema); // "product" sẽ được tự động chuyển thành products
+const Product = mongoose.model("product", ProductSchema);
 
 module.exports = Product;

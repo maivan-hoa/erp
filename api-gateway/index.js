@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const proxy = require("express-http-proxy");
 const logger = require("morgan");
-const { PORT, userServiceUrl, storeServiceUrl } = require("./config");
+const { PORT, userServiceUrl, storeServiceUrl, productServiceUrl, orderServiceUrl } = require("./config");
 
 const app = express();
 
@@ -19,6 +19,8 @@ app.get("/api", (req, res, next) => {
 
 app.use("/api/sv_1", proxy(userServiceUrl));
 app.use("/api/sv_2", proxy(storeServiceUrl));
+app.use("/api/sv_3", proxy(productServiceUrl));
+app.use("/api/sv_4", proxy(orderServiceUrl));
 
 // 404
 app.use((req, res, next) => {

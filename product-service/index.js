@@ -6,6 +6,8 @@ const path = require("path");
 const fileUpload = require("express-fileupload");
 const { PORT } = require("./config");
 const productRoute = require("./routes/product");
+const categoryRoute = require("./routes/category");
+const itemRoute = require("./routes/item");
 
 require("./models");
 
@@ -25,6 +27,8 @@ app.get("/", (req, res, next) => {
 });
 
 app.use("/products", productRoute);
+app.use("/categories", categoryRoute);
+app.use("/items", itemRoute);
 
 // 404
 app.use((req, res, next) => {
