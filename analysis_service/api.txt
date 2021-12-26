@@ -1,10 +1,10 @@
-http://127.0.0.1:8005/analysis/truth/department
-http://127.0.0.1:8005/analysis/truth/size
-http://127.0.0.1:8005/analysis/truth/type
-http://127.0.0.1:8005//analysis/truth/weeklySaleInStore?year=...
-http://127.0.0.1:8005/analysis/truth/weeklySaleInDept?year=...&store=...
+http://127.0.0.1:8005/analysis/truth/department : số lượng mặt hàng trong mỗi cửa hàng
+http://127.0.0.1:8005/analysis/truth/size : kích thước của mỗi cửa hàng
+http://127.0.0.1:8005/analysis/truth/type : số lượng các kiểu cửa hàng
+http://127.0.0.1:8005//analysis/truth/weeklySaleInStore?year=...  : doanh số bán của các cửa hàng trong năm nào đó
+http://127.0.0.1:8005/analysis/truth/weeklySaleInDept?year=...&store=... : doanh số bán của các loại mặt hàng của một cửa hàng trong năm nào đó
 
-/run/predict?year=...&currentWeek=...
-http://127.0.0.1:8005/analysis/predict/weeklySaleInStore?week=...
-http://127.0.0.1:8005/analysis/predict/weeklySaleInDept?week=...&store=...
-http://127.0.0.1:8005/analysis/predict/weeklySaleInYear
+/run/predict?year=...&currentWeek=...  : chạy dự đoán doanh số (cần chọn năm và tuần hiện tại, một năm có 53 tuần)
+http://127.0.0.1:8005/analysis/predict/weeklySaleInStore?week=...  : doanh số bán dự đoán của các cửa hàng trong tuần truyên vào
+http://127.0.0.1:8005/analysis/predict/weeklySaleInDept?week=...&store=...  : doanh số bán dự đoán của các loại mặt hàng trong cửa hàng nào đó 
+http://127.0.0.1:8005/analysis/predict/weeklySaleInYear  : so sánh doanh số bán theo năm: trả về doanh số bán của năm trước đó, năm hiện tại (đến tuần hiện tại) và doanh số dự đoán của các tuần tiếp theo (nên vẽ biểu đồ đường với 3 màu khác nhau)
