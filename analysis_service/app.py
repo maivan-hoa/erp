@@ -13,5 +13,5 @@ def hello():
 
 
 if __name__ == "__main__":
-	app.run(port=8005, debug=False)
+	app.run(port=8005, debug=True)
 

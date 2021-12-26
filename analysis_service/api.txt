@@ -4,7 +4,7 @@ http://127.0.0.1:8005/analysis/truth/type : số lượng các kiểu cửa hàn
 http://127.0.0.1:8005//analysis/truth/weeklySaleInStore?year=...  : doanh số bán của các cửa hàng trong năm nào đó
 http://127.0.0.1:8005/analysis/truth/weeklySaleInDept?year=...&store=... : doanh số bán của các loại mặt hàng của một cửa hàng trong năm nào đó
 
-/run/predict?year=...&currentWeek=...  : chạy dự đoán doanh số (cần chọn năm và tuần hiện tại, một năm có 52 tuần)
+http://127.0.0.1:8005/run/predict  : chạy dự đoán doanh số (API này phải được gọi ngay khi vào analysis, để có thể gọi được các API bên dưới)
 http://127.0.0.1:8005/analysis/predict/weeklySaleInStore?week=...  : doanh số bán dự đoán của các cửa hàng trong tuần truyên vào
 http://127.0.0.1:8005/analysis/predict/weeklySaleInDept?week=...&store=...  : doanh số bán dự đoán của các loại mặt hàng trong cửa hàng nào đó 
 http://127.0.0.1:8005/analysis/predict/weeklySaleInYear  : so sánh doanh số bán theo năm: trả về doanh số bán của năm trước đó, năm hiện tại (đến tuần hiện tại) và doanh số dự đoán của các tuần tiếp theo (nên vẽ biểu đồ đường với 3 màu khác nhau)
