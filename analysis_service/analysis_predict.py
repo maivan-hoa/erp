@@ -55,11 +55,22 @@ def run_predict():
     global YEAR_PREDICT
     global WEEK_PREDICT
 
-    year = request.args.get('year', type=int, default=2012)
-    current_week = request.args.get('currentWeek', type=int, default=43)
+    (year, current_week, _) = datetime.datetime.now().isocalendar()
+
+    year = 2012
+    current_week = 51
+    # year = request.args.get('year', type=int, default=2012)
+    # current_week = request.args.get('currentWeek', type=int, default=43)
     
     week = [current_week + i for i in range(1, 5)] # xử lý trường hợp week vượt quá 52
-    df_predict_success = predict(year, week)
+    df_predict_1 = predict(year, [w for w in week if w <= 52])
+
+    try:
+        df_predict_2 = predict(year+1, [w%52 for w in week if w >52])
+        df_predict_success = pd.concat([df_predict_1, df_predict_2])
+    except:
+        df_predict_success = df_predict_1
+
     YEAR_PREDICT = year
     WEEK_PREDICT = current_week + 1
 
@@ -78,9 +89,9 @@ def weeklySaleInYear():
     df_temp_predict = df_predict_success.groupby(['Year', 'Week'])['Weekly_Sales'].sum().reset_index()
     results = {}
 
-    results['{}_truth'.format(YEAR_PREDICT-1)] = df_temp_train[df_temp_train.Year == YEAR_PREDICT-1][['Week', 'Weekly_Sales']].to_dict('record')
-    results['{}_truth'.format(YEAR_PREDICT)] = df_temp_train[df_temp_train.Year == YEAR_PREDICT][['Week', 'Weekly_Sales']].to_dict('record')
-    results['{}_predict'.format(YEAR_PREDICT)] = df_temp_predict[['Week', 'Weekly_Sales']].to_dict('record')
+    results['truth'] = df_temp_train[(YEAR_PREDICT - 1<= df_temp_train.Year) & (df_temp_train.Year <= YEAR_PREDICT)][['Year', 'Week', 'Weekly_Sales']].to_dict('record')
+    results['predict'] = df_temp_predict[df_temp_predict.Year >= YEAR_PREDICT][['Year', 'Week', 'Weekly_Sales']].to_dict('record')
+
     results['resultCode'] = 1
 
     return results
