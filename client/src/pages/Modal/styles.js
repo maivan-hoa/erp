@@ -37,6 +37,19 @@ export const Content = styled.div`
         border: 1px solid #dddddd;
         border-radius: 5px;
     }
+
+    h2 {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-size: 1rem;
+        color: red;
+        text-align: center;
+    }
 `;
 
 export const ButtonLocal = styled.button`
@@ -87,4 +100,26 @@ export const FieldName = styled.p`
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 1rem;
+`;
+
+export const FieldCustom = styled.div`
+    margin-bottom: 15px;
+`;
+
+export const Input = styled.input`
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+`;
+
+export const Label = styled.label`
+    display: block;
+    color: #666666;
+    margin-bottom: 5px;
+`;
+
+export const ShowError = styled.span`
+    color: red;
+    font-size: 0.8rem;
 `;

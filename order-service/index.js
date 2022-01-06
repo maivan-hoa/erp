@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const logger = require("morgan");
-const path = require("path");
 const { PORT } = require("./config");
 const orderRoute = require("./routes/order");
 
@@ -13,7 +12,6 @@ app.use(logger("dev"));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.get("/", (req, res, next) => {

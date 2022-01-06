@@ -5,33 +5,35 @@ import apis from "../../apis";
 import Spinner from "../../components/Spinner";
 import Button from "../../components/Button";
 import Table from "../../components/Table";
-import CreateNewItem from "../Modal/CreateNewItem";
-import UpdateItem from "../Modal/UpdateItem";
+import CreateOrder from "../Modal/CreateOrder";
+import UpdateOrder from "../Modal/UpdateOrder";
+import DetailOrder from "../Modal/DetailOrder";
 
-const Warehouse = () => {
-    const [items, setItems] = useState([]);
+const Order = () => {
+    const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const storeId = useSelector((state) => state.store.selectedStore);
     let datas = [];
-    const hasDetail = false;
+    const hasDetail = true;
     const [reload, setReload] = useState(0);
+    const [openDetailModal, setOpenDetailModal] = useState(false);
     const [openCreateModal, setOpenCreateModal] = useState(false);
     const [openUpdateModal, setOpenUpdateModal] = useState(false);
     const [currentObject, setCurrentObject] = useState({});
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         const getItems = async () => {
             try {
                 setLoading(true);
+                const orders = await apis.order.getOrdersByStore(storeId);
+                if (orders.status === 1) {
+                    setOrders(orders.result);
+                }
                 const items = await apis.item.getItemsByStore(storeId);
                 if (items.status === 1) {
-                    setItems(items.result);
-                }
-                const products = await apis.product.getProducts();
-                if (products.status === 1) {
-                    setProducts(products.result);
+                    setItems(items.result.filter((item) => item.count > 0));
                 }
             } catch (error) {
                 setError(true);
@@ -42,32 +44,29 @@ const Warehouse = () => {
         getItems();
     }, [storeId, reload]);
 
-    items.forEach((item) => {
-        let d = new Date(item.createdAt);
+    orders.forEach((order) => {
+        let d = new Date(order.createdAt);
         let date = `${d.getDay()}.${d.getMonth()}.${d.getFullYear()}`;
-        datas.push({ ...item, createdAt: date, productName: item.productId.name, productUnit: item.productId.unit, productSku: item.productId.sku });
+        let count = order.listProduct.length;
+        datas.push({ ...order, createdAt: date, productCount: count });
     });
 
     const labels = [
         {
-            Header: "Tên sản phẩm",
-            accessor: "productName",
+            Header: "Tên khách hàng",
+            accessor: "customerName",
         },
         {
-            Header: "SKU",
-            accessor: "productSku",
+            Header: "Số mặt hàng",
+            accessor: "productCount",
         },
         {
-            Header: "Giá VNĐ",
-            accessor: "price",
+            Header: "Tổng số tiền VNĐ",
+            accessor: "totalMoney",
         },
         {
-            Header: "Đơn vị",
-            accessor: "productUnit",
-        },
-        {
-            Header: "Số lượng",
-            accessor: "count",
+            Header: "Người tạo",
+            accessor: "createdBy",
         },
         {
             Header: "Ngày tạo",
@@ -76,8 +75,8 @@ const Warehouse = () => {
     ];
 
     const handleDelete = (item) => {
-        if (window.confirm("Sản phẩm " + item.productName + " sẽ bị xóa !") === true) {
-            apis.item.deleteItem(item.id).then((rea) => {
+        if (window.confirm("Hoá đơn của khách hàng " + item.customerName + " sẽ bị xóa !") === true) {
+            apis.order.deleteOrder(item.id).then((res) => {
                 setReload(1);
             });
         }
@@ -85,11 +84,12 @@ const Warehouse = () => {
 
     return (
         <Wrapper>
-            {openCreateModal && <CreateNewItem setOpenModal={setOpenCreateModal} setReload={setReload} products={products} storeId={storeId} />}
-            {openUpdateModal && <UpdateItem setOpenModal={setOpenUpdateModal} currentObject={currentObject} setReload={setReload} />}
+            {openDetailModal && <DetailOrder setOpenModal={setOpenDetailModal} data={currentObject} />}
+            {openCreateModal && <CreateOrder setOpenModal={setOpenCreateModal} setReload={setReload} items={items} storeId={storeId} />}
+            {openUpdateModal && <UpdateOrder setOpenModal={setOpenUpdateModal} />}
             <Title>
-                <h1>Sản phẩm tại cửa hàng</h1>
-                <Button onClick={() => setOpenCreateModal(true)}>Thêm sản phẩm mới</Button>
+                <h1>Hóa đơn</h1>
+                <Button onClick={() => setOpenCreateModal(true)}>Thêm hóa đơn mới</Button>
             </Title>
             {loading ? (
                 <Spinner />
@@ -100,7 +100,7 @@ const Warehouse = () => {
                     labels={labels}
                     datas={datas}
                     hasDetail={hasDetail}
-                    setOpenDetailModal
+                    setOpenDetailModal={setOpenDetailModal}
                     setCurrentObject={setCurrentObject}
                     setOpenUpdateModal={setOpenUpdateModal}
                     deleteObject={handleDelete}
@@ -110,4 +110,4 @@ const Warehouse = () => {
     );
 };
 
-export default Warehouse;
+export default Order;

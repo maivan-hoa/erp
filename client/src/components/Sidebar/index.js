@@ -22,7 +22,7 @@ const Sidebar = ({ match }) => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={`${match.url}/teams`} activeClassName='selected'>
+                            <NavLink to={`${match.url}/orders`} activeClassName='selected'>
                                 <span className='ti-shopping-cart-full'></span>
                                 <span>Hóa đơn</span>
                             </NavLink>

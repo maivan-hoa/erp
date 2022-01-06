@@ -62,7 +62,11 @@ const Store = () => {
     ];
 
     const handleDelete = (store) => {
-        if (window.confirm("Sản phẩm " + store.name + " sẽ bị xóa !") === true) {
+        if (store.numberEmployee > 0) {
+            window.alert("Cửa hàng " + store.name + " đang có " + store.numberEmployee + " nhân viên. Hãy di chuyển họ sang các cửa hàng khác!");
+            return;
+        }
+        if (window.confirm("Cửa hàng " + store.name + " sẽ bị xóa !") === true) {
             dispatch(deleteStoreAsync(store.id));
         }
     };

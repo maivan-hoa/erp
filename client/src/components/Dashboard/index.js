@@ -5,6 +5,7 @@ import Stores from "../../pages/Stores";
 import Employees from "../../pages/Employees";
 import Products from "../../pages/Products";
 import Warehouses from "../../pages/Warehouses";
+import Order from "../../pages/Orders";
 import Store from "../Store";
 import { useRouteMatch, Switch, Route } from "react-router-dom";
 import "./styles.css";
@@ -29,7 +30,7 @@ const Dashboard = () => {
                     {role === "giam-doc" && <Store />}
                     <Switch>
                         <Route exact path={`${match.url}`} component={Overview} />
-                        <Route path={`${match.url}/teams`}>Teams</Route>
+                        <Route path={`${match.url}/orders`} component={Order} />
                         <Route path={`${match.url}/stores`} component={Stores} />
                         <Route path={`${match.url}/employees`} component={Employees} />
                         <Route path={`${match.url}/products`} component={Products} />

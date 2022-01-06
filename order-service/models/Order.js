@@ -1,13 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const { PORT, BASE_URL } = require("../config");
 
 const OrderSchema = new Schema({
-    order_id: {
-        type: String,
-        required: true,
-    },
-
     customer_name: {
         type: String,
         required: false,
@@ -23,6 +17,11 @@ const OrderSchema = new Schema({
         default: Date.now(),
     },
 
+    created_by: {
+        type: String,
+        require: true,
+    },
+
     total_money: {
         type: Number,
         require: true,
@@ -35,8 +34,8 @@ const OrderSchema = new Schema({
     },
 
     store_id: {
-        type: Schema.Types.ObjectId,
-        ref: "store",
+        type: String,
+        require: true,
     },
 });
 
