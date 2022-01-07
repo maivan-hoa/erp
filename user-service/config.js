@@ -9,7 +9,5 @@ module.exports = {
     NOT_FOUND: 404,
     TOO_MANY_REQUESTS: 429,
     INTERNAL_SERVER_ERROR: 500,
-    HAS_MANAGE_ROLE: "giam-doc",
-    HAS_MANAGE_USER: "giam-doc",
     BASE_URL: "http://localhost:",
 };

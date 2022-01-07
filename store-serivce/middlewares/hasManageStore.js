@@ -1,7 +1,7 @@
-const { FORBIDDEN, HAS_MANAGE_STORE } = require("../config");
+const { FORBIDDEN } = require("../config");
 
 const hasManageStore = (req, res, next) => {
-    if (req.userRole === HAS_MANAGE_STORE) {
+    if (req.userRole === 'giam-doc' || req.userRole === 'quan-ly-cua-hang') {
         return next();
     }
     return res.sendStatus(FORBIDDEN);

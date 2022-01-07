@@ -8,5 +8,4 @@ module.exports = {
     NOT_FOUND: 404,
     TOO_MANY_REQUESTS: 429,
     INTERNAL_SERVER_ERROR: 500,
-    HAS_MANAGE_STORE: "giam-doc",
 };

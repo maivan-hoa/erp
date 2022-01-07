@@ -20,7 +20,7 @@ export const authSlice = createSlice({
     name: "auth",
     initialState: initialState,
     reducers: {
-        logout(state) {
+        logout(state, action) {
             sessionStorage.removeItem("auth");
             return {
                 user: {},
@@ -35,5 +35,8 @@ export const authSlice = createSlice({
         },
     },
 });
+
+export const { logout } = authSlice.actions;
+
 
 export default authSlice.reducer;

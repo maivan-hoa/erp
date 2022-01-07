@@ -44,7 +44,7 @@ const CreateNewItem = ({ setOpenModal, setReload, products, storeId }) => {
                     {(props) => {
                         return (
                             <Form>
-                                <FastField name='product_id' component={SelectField} label='Danh mục sản phẩm' placeholder='' options={options} />
+                                <FastField name='product_id' component={SelectField} label='Tên sản phẩm' placeholder='' options={options} />
                                 <FastField
                                     // Formik's props
                                     name='price'

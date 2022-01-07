@@ -1,8 +1,9 @@
 from flask import Blueprint
 from utils import *
+from flask_cors import CORS
 
 analysis_predict = Blueprint('analysis_predict', __name__)
-
+CORS(analysis_predict)
 RF = None
 df_predict_success = pd.DataFrame()
 YEAR_PREDICT = None

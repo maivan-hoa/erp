@@ -7,6 +7,8 @@ name = "pypi"
 numpy = "*"
 pandas = "*"
 flask = "*"
+scikit-learn = "*"
+flask-cors = "*"
 
 [dev-packages]
 

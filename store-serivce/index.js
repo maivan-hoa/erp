@@ -66,5 +66,5 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`User service server is listening on port ${PORT}`);
+    console.log(`Store service server is listening on port ${PORT}`);
 });
