@@ -59,7 +59,7 @@ def run_predict():
     (year, current_week, _) = datetime.datetime.now().isocalendar()
 
     year = 2012
-    current_week = 51
+    current_week = 43
     # year = request.args.get('year', type=int, default=2012)
     # current_week = request.args.get('currentWeek', type=int, default=43)
     
