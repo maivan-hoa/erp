@@ -133,20 +133,20 @@ const Overview = () => {
 
     return (
         <div>
-            <h1>Tổng quan</h1>
+            <h1>Overview</h1>
 
             <GridTwo>
                 <div>
                     {truthDepartmentLoading ? (
                         <Spinner />
                     ) : truthDepartmentError ? (
-                        <p>Lỗi tải dữ liệu xuống!</p>
+                        <p>Oops, Something went wrong!</p>
                     ) : (
                         <BarChart
-                            title='Số lượng mặt hàng trong mỗi cửa hàng'
+                            title='Number of items in each store'
                             labels={truthDepartmentData.map((data) => data.store)}
                             datas={{
-                                label: "số lượng mặt hàng",
+                                label: "number of items",
                                 data: truthDepartmentData.map((data) => data.dept),
                                 backgroundColor: "rgba(53, 162, 235, 0.5)",
                             }}
@@ -157,10 +157,10 @@ const Overview = () => {
                     {truthTypeLoading ? (
                         <Spinner />
                     ) : truthTypeError ? (
-                        <p>Lỗi tải dữ liệu xuống!</p>
+                        <p>Oops, Something went wrong!</p>
                     ) : (
                         <PieChart
-                            title='Số lượng các kiểu cửa hàng'
+                            title='Number of store types'
                             data={{
                                 labels: truthTypeData.map((data) => data.type),
                                 datasets: [
@@ -194,13 +194,13 @@ const Overview = () => {
                     {truthSizeLoading ? (
                         <Spinner />
                     ) : truthSizeError ? (
-                        <p>Lỗi tải dữ liệu xuống!</p>
+                        <p>Oops, Something went wrong!</p>
                     ) : (
                         <BarChart
-                            title='Kích thước của mỗi cửa hàng'
+                            title='Size of each store'
                             labels={truthSizeData.map((data) => data.store)}
                             datas={{
-                                label: "kích thước",
+                                label: "size",
                                 data: truthSizeData.map((data) => data.size),
                                 backgroundColor: "rgba(53, 162, 235, 0.5)",
                             }}
@@ -212,13 +212,13 @@ const Overview = () => {
                     {weeklySaleInStoreLoading ? (
                         <Spinner />
                     ) : weeklySaleInStoreError ? (
-                        <p>Lỗi tải dữ liệu xuống!</p>
+                        <p>Oops, Something went wrong!</p>
                     ) : (
                         <BarChart
-                            title={"Doanh số bán của các cửa hàng trong năm " + year1}
+                            title={"Sales of stores in " + year1}
                             labels={weeklySaleInStoreData.map((data) => data.store)}
                             datas={{
-                                label: "doanh số bán hàng",
+                                label: "sales",
                                 data: weeklySaleInStoreData.map((data) => data.weeklySales),
                                 backgroundColor: "rgba(53, 162, 235, 0.5)",
                             }}
@@ -227,7 +227,7 @@ const Overview = () => {
                 </div>
                 <div>
                     <OptionField>
-                        <Title>Chọn năm</Title>
+                        <Title>Select year</Title>
                         <Select datas={yearData} current={year1} handleChange={handleChangeYear1} />
                     </OptionField>
                 </div>
@@ -235,13 +235,13 @@ const Overview = () => {
                     {weeklySaleInDeptLoading ? (
                         <Spinner />
                     ) : weeklySaleInDeptError ? (
-                        <p>Lỗi tải dữ liệu xuống!</p>
+                        <p>Oops, Something went wrong!</p>
                     ) : (
                         <BarChart
-                            title={"Doanh số bán của các loại mặt hàng của cửa hàng " + store + " trong năm " + year2}
+                            title={"Sales of " + store + " store items in " + year2}
                             labels={weeklySaleInDeptData.map((data) => data.dept)}
                             datas={{
-                                label: "doanh số bán hàng",
+                                label: "sales",
                                 data: weeklySaleInDeptData.map((data) => data.weeklySales),
                                 backgroundColor: "rgba(53, 162, 235, 0.5)",
                             }}
@@ -250,11 +250,11 @@ const Overview = () => {
                 </div>
                 <div>
                     <OptionField>
-                        <Title>Chọn năm</Title>
+                        <Title>Select year</Title>
                         <Select datas={yearData} current={year2} handleChange={handleChangeYear2} />
                     </OptionField>
                     <OptionField>
-                        <Title>Chọn cửa hàng</Title>
+                        <Title>Select store</Title>
                         <Select datas={stores} current={store} handleChange={handleChangeStore} />
                     </OptionField>
                 </div>

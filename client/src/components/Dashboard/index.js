@@ -8,6 +8,7 @@ import Warehouses from "../../pages/Warehouses";
 import Order from "../../pages/Orders";
 import Predict from "../../pages/Predict";
 import Profile from "../../pages/Profile";
+import NotFound from "../../pages/NotFound";
 import Store from "../Store";
 import { useRouteMatch, Switch, Route } from "react-router-dom";
 import "./styles.css";
@@ -39,7 +40,7 @@ const Dashboard = () => {
                         <Route path={`${match.url}/products`} component={Products} />
                         <Route path={`${match.url}/warehouses`} component={Warehouses} />
                         <Route path={`${match.url}/profile`} component={Profile} />
-                        <Route path={`${match.url}/account`}>Account</Route>
+                        <Route path='/*' component={NotFound} />
                     </Switch>
                 </main>
             </div>

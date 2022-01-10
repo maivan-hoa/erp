@@ -51,7 +51,7 @@ const Product = () => {
 
     const labels = [
         {
-            Header: "Tên sản phẩm",
+            Header: "Product name",
             accessor: "name",
         },
         {
@@ -59,25 +59,25 @@ const Product = () => {
             accessor: "sku",
         },
         {
-            Header: "Danh mục",
+            Header: "Category",
             accessor: "categoryName",
         },
         {
-            Header: "Đơn vị",
+            Header: "Unit",
             accessor: "unit",
         },
         {
-            Header: "Xuất xứ",
+            Header: "Origin",
             accessor: "origin",
         },
         {
-            Header: "Ngày tạo",
+            Header: "Created at",
             accessor: "createdAt",
         },
     ];
 
     const handleDelete = (product) => {
-        if (window.confirm("Sản phẩm " + product.name + " sẽ bị xóa !") === true) {
+        if (window.confirm(product.name + " will be deleted!") === true) {
             apis.product.deleteProduct(product.id).then((rea) => {
                 setReload(1);
             });
@@ -90,13 +90,13 @@ const Product = () => {
             {openCreateModal && <CreateProduct setOpenModal={setOpenCreateModal} setReload={setReload} categories={categories} />}
             {openUpdateModal && <UpdateProduct setOpenModal={setOpenUpdateModal} currentObject={currentObject} setReload={setReload} categories={categories} />}
             <Title>
-                <h1>Sản phẩm</h1>
-                <Button onClick={() => setOpenCreateModal(true)}>Thêm sản phẩm mới</Button>
+                <h1>Products</h1>
+                <Button onClick={() => setOpenCreateModal(true)}>Add new product</Button>
             </Title>
             {loading ? (
                 <Spinner />
             ) : error ? (
-                <p>Lỗi tải dữ liệu xuống!</p>
+                <p>Oops, Something went wrong!</p>
             ) : (
                 <Table
                     labels={labels}

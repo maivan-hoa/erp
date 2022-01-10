@@ -40,7 +40,7 @@ const UpdateStore = ({ setOpenModal, currentStore, users }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thêm cửa hàng mới</h1>
+                <h1>Update store information</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
@@ -84,7 +84,7 @@ const UpdateStore = ({ setOpenModal, currentStore, users }) => {
                                 <FastField name='manager_id' component={SelectField} label='Manager' placeholder='' options={options} />
 
                                 <Button type='submit' block>
-                                    Cập nhật
+                                    Update
                                 </Button>
                                 {/* <p className='bottom-text'>
                                     By clicking the Sign Up button, you agree to our

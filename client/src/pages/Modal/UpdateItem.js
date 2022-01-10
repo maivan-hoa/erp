@@ -27,7 +27,7 @@ const UpdateItem = ({ setOpenModal, setReload, currentObject }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Cập nhật sản phẩm</h1>
+                <h1>Update information</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
@@ -37,20 +37,20 @@ const UpdateItem = ({ setOpenModal, setReload, currentObject }) => {
                         return (
                             <Form>
                                 <FieldName>
-                                    Tên sản phẩm: <strong>{currentObject.productName}</strong>
+                                    Product name: <strong>{currentObject.productName}</strong>
                                 </FieldName>
                                 <FieldName>
                                     SKU: <strong>{currentObject.productSku}</strong>
                                 </FieldName>
                                 <FieldName>
-                                    Đơn vị: <strong>{currentObject.productUnit}</strong>
+                                    Unit: <strong>{currentObject.productUnit}</strong>
                                 </FieldName>
                                 <FastField
                                     // Formik's props
                                     name='price'
                                     component={Input}
                                     // Additional props
-                                    label='Giá sản phẩm'
+                                    label='Price VNĐ'
                                     type='text'
                                     placeholder=''
                                     disable={false}
@@ -60,13 +60,13 @@ const UpdateItem = ({ setOpenModal, setReload, currentObject }) => {
                                     name='count'
                                     component={Input}
                                     // Additional props
-                                    label='Số lượng sản phẩm'
+                                    label='Number of items'
                                     type='text'
                                     placeholder=''
                                     disable={false}
                                 />
                                 <Button type='submit' block>
-                                    Cập nhật
+                                    Update
                                 </Button>
                             </Form>
                         );

@@ -40,33 +40,33 @@ const Store = () => {
 
     const labels = [
         {
-            Header: "Tên cửa hàng",
+            Header: "Store name",
             accessor: "name",
         },
         {
-            Header: "Số nhân viên",
+            Header: "Number of employees",
             accessor: "numberEmployee",
         },
         {
-            Header: "Địa chỉ",
+            Header: "Address",
             accessor: "address",
         },
         {
-            Header: "Người quản lý",
+            Header: "Manager",
             accessor: "manager",
         },
         {
-            Header: "Ngày tạo",
+            Header: "Created at",
             accessor: "createdAt",
         },
     ];
 
     const handleDelete = (store) => {
         if (store.numberEmployee > 0) {
-            window.alert("Cửa hàng " + store.name + " đang có " + store.numberEmployee + " nhân viên. Hãy di chuyển họ sang các cửa hàng khác!");
+            window.alert(store.name + " store has " + store.numberEmployee + " employees. Let's move them to other stores!");
             return;
         }
-        if (window.confirm("Cửa hàng " + store.name + " sẽ bị xóa !") === true) {
+        if (window.confirm(store.name + " store will be deleted!") === true) {
             dispatch(deleteStoreAsync(store.id));
         }
     };
@@ -76,8 +76,8 @@ const Store = () => {
             {openCreateModal && <CreateStore setOpenModal={setOpenCreateModal} users={users} />}
             {openUpdateModal && <UpdateStore setOpenModal={setOpenUpdateModal} currentStore={currentObject} users={users} />}
             <Title>
-                <h1>Cửa hàng</h1>
-                <Button onClick={() => setOpenCreateModal(true)}>Thêm cửa hàng mới</Button>
+                <h1>Stores</h1>
+                <Button onClick={() => setOpenCreateModal(true)}>Add new store</Button>
             </Title>
             <Table
                 labels={labels}

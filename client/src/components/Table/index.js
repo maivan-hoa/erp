@@ -37,7 +37,7 @@ const Table = ({ labels, datas, hasDetail, setOpenUpdateModal, setOpenDetailModa
             ...columns,
             {
                 id: "actions",
-                Header: "Thao tác",
+                Header: "Actions",
                 Cell: ({ row }) => (
                     <>
                         {hasDetail && (
@@ -83,7 +83,7 @@ const Table = ({ labels, datas, hasDetail, setOpenUpdateModal, setOpenDetailModa
                     onChange={(e) => {
                         setGlobalFilter(e.target.value);
                     }}
-                    placeholder='Tìm kiếm ...'
+                    placeholder='Search ...'
                 />
                 <Select
                     value={state.pageSize}
@@ -93,7 +93,7 @@ const Table = ({ labels, datas, hasDetail, setOpenUpdateModal, setOpenDetailModa
                 >
                     {[10, 20, 30, 40, 50].map((pageSize) => (
                         <Option key={pageSize} value={pageSize}>
-                            Hiển thị {pageSize}
+                            Display {pageSize}
                         </Option>
                     ))}
                 </Select>
@@ -136,7 +136,7 @@ const Table = ({ labels, datas, hasDetail, setOpenUpdateModal, setOpenDetailModa
             </Content>
             <Pagination>
                 <div>
-                    Trang <strong>{state.pageIndex + 1}</strong>/<strong>{pageOptions.length}</strong>
+                    Page <strong>{state.pageIndex + 1}</strong>/<strong>{pageOptions.length}</strong>
                 </div>
                 <div>
                     <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>

@@ -44,7 +44,7 @@ const Employee = () => {
 
     const labels = [
         {
-            Header: "Họ và tên",
+            Header: "Full name",
             accessor: "name",
         },
         {
@@ -52,25 +52,25 @@ const Employee = () => {
             accessor: "email",
         },
         {
-            Header: "Số điện thoại",
+            Header: "Phone number",
             accessor: "phone",
         },
         {
-            Header: "Ngày sinh",
+            Header: "Date of birth",
             accessor: "dateOfBirth",
         },
         {
-            Header: "Vị trí",
+            Header: "Position",
             accessor: "roleName",
         },
         {
-            Header: "Ngày tạo",
+            Header: "Created at",
             accessor: "createdAt",
         },
     ];
 
     const handleDelete = (id) => {
-        alert("Tính năng đang được hoàn thiện!");
+        alert("Feature is being worked on!");
     };
 
     return (
@@ -79,8 +79,8 @@ const Employee = () => {
             {openCreateModal && <CreateUser setOpenModal={setOpenCreateModal} stores={store.stores} roles={role} />}
             {openUpdateModal && <UpdateUser setOpenModal={setOpenUpdateModal} stores={store.stores} roles={role} currentUser={currentObject} />}
             <Title>
-                <h1>Nhân viên</h1>
-                <Button onClick={() => setOpenCreateModal(true)}>Thêm nhân viên mới</Button>
+                <h1>Employees</h1>
+                <Button onClick={() => setOpenCreateModal(true)}>Add new employee</Button>
             </Title>
             <Table
                 labels={labels}

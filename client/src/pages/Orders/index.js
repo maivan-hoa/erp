@@ -53,29 +53,29 @@ const Order = () => {
 
     const labels = [
         {
-            Header: "Tên khách hàng",
+            Header: "Customer name",
             accessor: "customerName",
         },
         {
-            Header: "Số mặt hàng",
+            Header: "Number of items",
             accessor: "productCount",
         },
         {
-            Header: "Tổng số tiền VNĐ",
+            Header: "Total VNĐ",
             accessor: "totalMoney",
         },
         {
-            Header: "Người tạo",
+            Header: "Created by",
             accessor: "createdBy",
         },
         {
-            Header: "Ngày tạo",
+            Header: "Created at",
             accessor: "createdAt",
         },
     ];
 
     const handleDelete = (item) => {
-        if (window.confirm("Hoá đơn của khách hàng " + item.customerName + " sẽ bị xóa !") === true) {
+        if (window.confirm("Order of " + item.customerName + " will be deleted!") === true) {
             apis.order.deleteOrder(item.id).then((res) => {
                 setReload(1);
             });
@@ -88,13 +88,13 @@ const Order = () => {
             {openCreateModal && <CreateOrder setOpenModal={setOpenCreateModal} setReload={setReload} items={items} storeId={storeId} />}
             {openUpdateModal && <UpdateOrder setOpenModal={setOpenUpdateModal} />}
             <Title>
-                <h1>Hóa đơn</h1>
-                <Button onClick={() => setOpenCreateModal(true)}>Thêm hóa đơn mới</Button>
+                <h1>Orders</h1>
+                <Button onClick={() => setOpenCreateModal(true)}>Add new order</Button>
             </Title>
             {loading ? (
                 <Spinner />
             ) : error ? (
-                <p>Lỗi tải dữ liệu xuống!</p>
+                <p>Oops, Something went wrong!</p>
             ) : (
                 <Table
                     labels={labels}

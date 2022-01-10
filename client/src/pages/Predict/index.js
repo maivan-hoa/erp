@@ -149,21 +149,21 @@ const Predict = () => {
 
     return (
         <Wrapper>
-            <h1>Dự đoán thông minh</h1>
+            <h1>Smart prediction</h1>
             {loading ? (
                 <>
                     <Spinner />
-                    <p className='predict'>Hệ thống đang xử lý, hãy đợi . . .</p>
+                    <p className='predict'>The system is processing, please wait. . .</p>
                 </>
             ) : error ? (
-                <p>Đã xảy ra lỗi trong quá trình dự đoán!</p>
+                <p>An error occurred during prediction!</p>
             ) : (
                 <>
                     <div className='predict-chart'>
                         {weeklySaleInYearLoading ? (
                             <Spinner />
                         ) : weeklySaleInYearError ? (
-                            <p>Lỗi tải dữ liệu xuống!</p>
+                            <p>Oops, Something went wrong!</p>
                         ) : (
                             <Line
                                 options={{
@@ -171,7 +171,7 @@ const Predict = () => {
                                     plugins: {
                                         title: {
                                             display: true,
-                                            text: "Doanh số theo dòng thời gian và dự đoán",
+                                            text: "Sales by timeline and projections",
                                         },
                                     },
                                 }}
@@ -206,15 +206,15 @@ const Predict = () => {
                         {weeklySaleInStoreLoading ? (
                             <Spinner />
                         ) : weeklySaleInStoreError ? (
-                            <p>Lỗi tải dữ liệu xuống!</p>
+                            <p>Oops, Something went wrong!</p>
                         ) : (
                             <GridTwo>
                                 <div>
                                     <BarChart
-                                        title={"Doanh số bán dự đoán của các cửa hàng trong tuần " + week1}
+                                        title={"Expected store sales for week " + week1}
                                         labels={weeklySaleInStoreData.map((data) => data.store)}
                                         datas={{
-                                            label: "Doanh số bán hàng dự đoán",
+                                            label: "Sales forecast",
                                             data: weeklySaleInStoreData.map((data) => data.weeklySales),
                                             backgroundColor: "rgba(53, 162, 235, 0.5)",
                                         }}
@@ -222,7 +222,7 @@ const Predict = () => {
                                 </div>
                                 <div>
                                     <OptionField>
-                                        <Title1>Chọn tuần</Title1>
+                                        <Title1>Select week</Title1>
                                         <Select datas={weeks} current={week1} handleChange={handleChangeWeek1} />
                                     </OptionField>
                                 </div>
@@ -233,15 +233,15 @@ const Predict = () => {
                         {weeklySaleInDeptLoading ? (
                             <Spinner />
                         ) : weeklySaleInDeptError ? (
-                            <p>Lỗi tải dữ liệu xuống!</p>
+                            <p>Oops, Something went wrong!</p>
                         ) : (
                             <GridTwo>
                                 <div>
                                     <BarChart
-                                        title={"Doanh số bán dự đoán của các loại mặt hàng của cửa hàng " + store + " trong tuần " + week2}
+                                        title={"Expected sales of items of store No." + store + " for week " + week2}
                                         labels={weeklySaleInDeptData.map((data) => data.dept)}
                                         datas={{
-                                            label: "Doanh số bán hàng dự đoán",
+                                            label: "Sales forecast",
                                             data: weeklySaleInDeptData.map((data) => data.weeklySales),
                                             backgroundColor: "rgba(53, 162, 235, 0.5)",
                                         }}
@@ -249,11 +249,11 @@ const Predict = () => {
                                 </div>
                                 <div>
                                     <OptionField>
-                                        <Title1>Chọn tuần</Title1>
+                                        <Title1>Select week</Title1>
                                         <Select datas={weeks} current={week2} handleChange={handleChangeWeek2} />
                                     </OptionField>
                                     <OptionField>
-                                        <Title1>Chọn cửa hàng</Title1>
+                                        <Title1>Select store</Title1>
                                         <Select datas={stores} current={store} handleChange={handleChangeStore} />
                                     </OptionField>
                                 </div>

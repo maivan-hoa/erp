@@ -6,19 +6,19 @@ const DetailProduct = ({ setOpenModal, data }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thông tin chi tiết</h1>
+                <h1>Details</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
                 <Grid>
                     <Avatar>
                         <Photo src={data.photoUrl} />
-                        <p>Ảnh sản phẩm</p>
+                        <p>Photo</p>
                     </Avatar>
                     <ReactTable>
                         <TableBody>
                             <TableRow>
-                                <TableData>Tên sản phẩm</TableData>
+                                <TableData>Product name</TableData>
                                 <TableData>
                                     <strong>{data.name}</strong>
                                 </TableData>
@@ -30,31 +30,31 @@ const DetailProduct = ({ setOpenModal, data }) => {
                                 </TableData>
                             </TableRow>
                             <TableRow>
-                                <TableData>Danh mục</TableData>
+                                <TableData>Category</TableData>
                                 <TableData>
                                     <strong>{data.categoryName}</strong>
                                 </TableData>
                             </TableRow>
                             <TableRow>
-                                <TableData>Đơn vị</TableData>
+                                <TableData>Unit</TableData>
                                 <TableData>
                                     <strong>{data.unit}</strong>
                                 </TableData>
                             </TableRow>
                             <TableRow>
-                                <TableData>Xuất xứ</TableData>
+                                <TableData>Origin</TableData>
                                 <TableData>
                                     <strong>{data.origin}</strong>
                                 </TableData>
                             </TableRow>
                             <TableRow>
-                                <TableData>Khối lượng</TableData>
+                                <TableData>Weight</TableData>
                                 <TableData>
                                     <strong>{data.weight}</strong>
                                 </TableData>
                             </TableRow>
                             <TableRow>
-                                <TableData>Ngày tạo</TableData>
+                                <TableData>Crerated at</TableData>
                                 <TableData>
                                     <strong>{data.createdAt}</strong>
                                 </TableData>
@@ -63,10 +63,10 @@ const DetailProduct = ({ setOpenModal, data }) => {
                     </ReactTable>
                 </Grid>
                 <Info>
-                    <strong>Bảo quản: </strong> {data.preserve}
+                    <strong>Preserve: </strong> {data.preserve}
                 </Info>
                 <Info>
-                    <strong>Mô tả: </strong> {data.description}
+                    <strong>Description: </strong> {data.description}
                 </Info>
             </Content>
         </Wrapper>

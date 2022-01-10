@@ -33,7 +33,7 @@ const CreateStore = ({ setOpenModal, users }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thêm cửa hàng mới</h1>
+                <h1>Add new store</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
@@ -66,7 +66,7 @@ const CreateStore = ({ setOpenModal, users }) => {
                                 <FastField name='manager_id' component={SelectField} label='Manager' placeholder='' options={options} />
 
                                 <Button type='submit' block>
-                                    Thêm
+                                    Add
                                 </Button>
                                 {/* <p className='bottom-text'>
                                     By clicking the Sign Up button, you agree to our

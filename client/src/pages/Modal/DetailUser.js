@@ -13,54 +13,54 @@ const DetailUser = ({ setOpenModal, data, stores }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thông tin chi tiết</h1>
+                <h1>Details</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
                 <Avatar>
                     <Image src={data.avatarUrl} />
-                    <p>Ảnh đại diện</p>
+                    <p>Avatar</p>
                 </Avatar>
                 <ReactTable>
                     <TableBody>
                         <TableRow>
-                            <TableData>Họ và tên</TableData>
+                            <TableData>Full name</TableData>
                             <TableData>
                                 <strong>{data.name}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Địa chỉ email</TableData>
+                            <TableData>Email</TableData>
                             <TableData>
                                 <strong>{data.email}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Số điện thoại</TableData>
+                            <TableData>Phone number</TableData>
                             <TableData>
                                 <strong>{data.phone}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Ngày sinh</TableData>
+                            <TableData>Date of birth</TableData>
                             <TableData>
                                 <strong>{data.dateOfBirth}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Cửa hàng</TableData>
+                            <TableData>Store</TableData>
                             <TableData>
                                 <strong>{storeName}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Vị trí</TableData>
+                            <TableData>Position</TableData>
                             <TableData>
                                 <strong>{data.roleName}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Ngày tạo</TableData>
+                            <TableData>Created at</TableData>
                             <TableData>
                                 <strong>{data.createdAt}</strong>
                             </TableData>

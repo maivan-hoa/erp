@@ -54,7 +54,7 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
     return (
         <Wrapper>
             <Content>
-                <h1>Thêm sản phẩm mới</h1>
+                <h1>Update information</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
@@ -68,7 +68,7 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
                                         name='name'
                                         component={Input}
                                         // Additional props
-                                        label='Tên sản phẩm'
+                                        label='Product name'
                                         type='text'
                                         placeholder=''
                                         disable={false}
@@ -91,7 +91,7 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
                                         name='unit'
                                         component={Input}
                                         // Additional props
-                                        label='Đơn vị'
+                                        label='Unit'
                                         type='text'
                                         placeholder=''
                                         disable={false}
@@ -101,7 +101,7 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
                                         name='origin'
                                         component={Input}
                                         // Additional props
-                                        label='Xuất xứ'
+                                        label='Origin'
                                         type='text'
                                         placeholder=''
                                         disable={false}
@@ -113,13 +113,13 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
                                         name='weight'
                                         component={Input}
                                         // Additional props
-                                        label='Khối lượng'
+                                        label='Weight'
                                         type='text'
                                         placeholder=''
                                         disable={false}
                                     />
                                     <div>
-                                        <label className='label-photo'>Ảnh sản phẩm</label>
+                                        <label className='label-photo'>Photo</label>
                                         <input
                                             className='upload-photo'
                                             type='file'
@@ -128,13 +128,13 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
                                         />
                                     </div>
                                 </Grid>
-                                <FastField name='category' component={SelectField} label='Danh mục sản phẩm' placeholder='' options={options} />
+                                <FastField name='category' component={SelectField} label='Category' placeholder='' options={options} />
                                 <FastField
                                     // Formik's props
                                     name='preserve'
                                     component={Input}
                                     // Additional props
-                                    label='Bảo quản'
+                                    label='Preserve'
                                     type='text'
                                     placeholder=''
                                     disable={false}
@@ -144,13 +144,13 @@ const UpdateProduct = ({ setOpenModal, currentObject, setReload, categories }) =
                                     name='description'
                                     component={Input}
                                     // Additional props
-                                    label='Mô tả'
+                                    label='Description'
                                     type='text'
                                     placeholder=''
                                     disable={false}
                                 />
                                 <Button type='submit' block>
-                                    Thêm
+                                    Update
                                 </Button>
                             </Form>
                         );

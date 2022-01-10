@@ -35,7 +35,7 @@ const CreateNewItem = ({ setOpenModal, setReload, products, storeId }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thêm sản phẩm mới</h1>
+                <h1>Add new product</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
@@ -44,13 +44,13 @@ const CreateNewItem = ({ setOpenModal, setReload, products, storeId }) => {
                     {(props) => {
                         return (
                             <Form>
-                                <FastField name='product_id' component={SelectField} label='Tên sản phẩm' placeholder='' options={options} />
+                                <FastField name='product_id' component={SelectField} label='Product name' placeholder='' options={options} />
                                 <FastField
                                     // Formik's props
                                     name='price'
                                     component={Input}
                                     // Additional props
-                                    label='Giá sản phẩm'
+                                    label='Price VNĐ'
                                     type='text'
                                     placeholder=''
                                     disable={false}
@@ -61,14 +61,14 @@ const CreateNewItem = ({ setOpenModal, setReload, products, storeId }) => {
                                     name='count'
                                     component={Input}
                                     // Additional props
-                                    label='Số lượng sản phẩm'
+                                    label='Number of items'
                                     type='text'
                                     placeholder=''
                                     disable={false}
                                 />
 
                                 <Button type='submit' block>
-                                    Thêm
+                                    Add
                                 </Button>
                             </Form>
                         );

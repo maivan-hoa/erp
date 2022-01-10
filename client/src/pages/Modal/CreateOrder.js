@@ -62,23 +62,23 @@ const CreateOrder = ({ setOpenModal, setReload, items, storeId }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thêm hóa đơn mới</h1>
+                <h1>Add new order</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
                 <Grid>
                     <FieldCustom>
-                        <Label htmlFor='customer_name'>Tên khách hàng</Label>
+                        <Label htmlFor='customer_name'>Customer name</Label>
                         <Input id='customer_name' type='text' value={name} onChange={(e) => setName(e.target.value)} />
                     </FieldCustom>
                     <FieldCustom>
-                        <Label htmlFor='customer_phone'>Số điện thoại</Label>
+                        <Label htmlFor='customer_phone'>Phone number</Label>
                         <Input id='customer_phone' type='text' value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </FieldCustom>
                 </Grid>
 
                 <FieldCustom>
-                    <Label htmlFor='list_product'>Thêm sản phẩm</Label>
+                    <Label htmlFor='list_product'>Add products</Label>
                     <Select id='list_product' isMulti options={options} onChange={(e) => setProducts(e)} />
                 </FieldCustom>
 
@@ -88,10 +88,10 @@ const CreateOrder = ({ setOpenModal, setReload, items, storeId }) => {
                     <ReactTable>
                         <TableHead>
                             <TableRow>
-                                <TableHeader>Tên sản phẩm</TableHeader>
-                                <TableHeader>Kho hàng</TableHeader>
-                                <TableHeader>Giá VNĐ</TableHeader>
-                                <TableHeader>Số lượng</TableHeader>
+                                <TableHeader>Product name</TableHeader>
+                                <TableHeader>Warehourse</TableHeader>
+                                <TableHeader>Price VNĐ</TableHeader>
+                                <TableHeader>Quantily</TableHeader>
                             </TableRow>
                         </TableHead>
 
@@ -129,7 +129,7 @@ const CreateOrder = ({ setOpenModal, setReload, items, storeId }) => {
                 )}
 
                 <Button block onClick={handleSubmit}>
-                    Thêm
+                    Add
                 </Button>
             </Content>
         </Wrapper>

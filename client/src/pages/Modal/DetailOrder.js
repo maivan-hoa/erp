@@ -6,58 +6,58 @@ const DetailProduct = ({ setOpenModal, data }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thông tin chi tiết</h1>
+                <h1>Details</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
                 <ReactTable>
                     <TableBody>
                         <TableRow>
-                            <TableData>Tên khách hàng</TableData>
+                            <TableData>Customer name</TableData>
                             <TableData>
                                 <strong>{data.customerName}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Số điện thoại</TableData>
+                            <TableData>Phone number</TableData>
                             <TableData>
                                 <strong>{data.customerPhone}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Số mặt hàng</TableData>
+                            <TableData>Number of items</TableData>
                             <TableData>
                                 <strong>{data.productCount}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Tổng số tiền (VNĐ)</TableData>
+                            <TableData>Total VNĐ</TableData>
                             <TableData>
                                 <strong>{data.totalMoney}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Người tạo</TableData>
+                            <TableData>Created by</TableData>
                             <TableData>
                                 <strong>{data.createdBy}</strong>
                             </TableData>
                         </TableRow>
                         <TableRow>
-                            <TableData>Ngày tạo</TableData>
+                            <TableData>Created at</TableData>
                             <TableData>
                                 <strong>{data.createdAt}</strong>
                             </TableData>
                         </TableRow>
                     </TableBody>
                 </ReactTable>
-                <h2>Danh sách sản phẩm mua</h2>
+                <h2>List of purchased products</h2>
                 <ReactTable>
                     <TableHead>
                         <TableRow>
-                            <TableHeader>Tên sản phẩm</TableHeader>
+                            <TableHeader>Product name</TableHeader>
                             <TableHeader>SKU</TableHeader>
-                            <TableHeader>Số lượng</TableHeader>
-                            <TableHeader>Giá</TableHeader>
+                            <TableHeader>Quantity</TableHeader>
+                            <TableHeader>Price VNĐ</TableHeader>
                         </TableRow>
                     </TableHead>
                     <TableBody>

@@ -45,7 +45,7 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
     return (
         <Wrapper>
             <Content>
-                <h1>Thêm nhân viên mới</h1>
+                <h1>Add new employee</h1>
                 <ButtonLocal onClick={() => setOpenModal(false)}>
                     <span className='ti-close'></span>
                 </ButtonLocal>
@@ -58,7 +58,7 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
                                     name='name'
                                     component={Input}
                                     // Additional props
-                                    label='Họ và tên'
+                                    label='Full name'
                                     type='text'
                                     placeholder=''
                                     disable={false}
@@ -69,7 +69,7 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
                                     name='email'
                                     component={Input}
                                     // Additional props
-                                    label='Địa chỉ Email'
+                                    label='Email'
                                     type='email'
                                     placeholder=''
                                     disable={false}
@@ -80,7 +80,7 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
                                         name='phone'
                                         component={Input}
                                         // Additional props
-                                        label='Số điện thoại'
+                                        label='Phone number'
                                         type='text'
                                         placeholder=''
                                         disable={false}
@@ -90,7 +90,7 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
                                         name='password'
                                         component={Input}
                                         // Additional props
-                                        label='Mật khẩu'
+                                        label='Pasword'
                                         type='password'
                                         placeholder=''
                                         disable={false}
@@ -102,7 +102,7 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
                                         name='date_of_birth'
                                         component={Input}
                                         // Additional props
-                                        label='Ngày sinh'
+                                        label='Date of birth'
                                         type='text'
                                         placeholder=''
                                         disable={false}
@@ -112,19 +112,19 @@ const CreateUser = ({ setOpenModal, stores, roles }) => {
                                         name='avatar'
                                         component={Input}
                                         // Additional props
-                                        label='Ảnh đại diện'
+                                        label='Avatar'
                                         type='file'
                                         placeholder=''
                                         disable={false}
                                     />
                                 </Grid>
 
-                                <FastField name='store_id' component={SelectField} label='Thuộc cửa hàng' placeholder='' options={options} />
+                                <FastField name='store_id' component={SelectField} label='Store' placeholder='' options={options} />
 
-                                <FastField name='role' component={SelectField} label='Vị trí' placeholder='' options={options2} />
+                                <FastField name='role' component={SelectField} label='Position' placeholder='' options={options2} />
 
                                 <Button type='submit' block>
-                                    Thêm
+                                    Add
                                 </Button>
                             </Form>
                         );
