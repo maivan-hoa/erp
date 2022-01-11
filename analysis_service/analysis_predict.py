@@ -77,7 +77,8 @@ def run_predict():
 
     results = {
         'message': 'Success',
-        'resultCode': 1
+        'resultCode': 1,
+        'current_week': current_week
     }
 
     return results
