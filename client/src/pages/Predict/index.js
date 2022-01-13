@@ -17,16 +17,17 @@ const Predict = () => {
     const [weeklySaleInYearData, setWeeklySaleInYearData] = useState({});
     const [weeklySaleInYearLoading, setWeeklySaleInYearLoading] = useState(false);
     const [weeklySaleInYearError, setWeeklySaleInYearError] = useState(false);
+    const [currentWeek, setCurrentWeek] = useState("");
 
     const [weeklySaleInStoreData, setWeeklySaleInStoreData] = useState([]);
     const [weeklySaleInStoreLoading, setWeeklySaleInStoreLoading] = useState(false);
     const [weeklySaleInStoreError, setWeeklySaleInStoreError] = useState(false);
-    const [week1, setWeek1] = useState("1");
+    const [week1, setWeek1] = useState("");
 
     const [weeklySaleInDeptData, setWeeklySaleInDeptData] = useState([]);
     const [weeklySaleInDeptLoading, setWeeklySaleInDeptLoading] = useState(false);
     const [weeklySaleInDeptError, setWeeklySaleInDeptError] = useState(false);
-    const [week2, setWeek2] = useState("1");
+    const [week2, setWeek2] = useState("");
     const [store, setStore] = useState("1");
 
     let weeks = [];
@@ -48,12 +49,7 @@ const Predict = () => {
             if (data.resultCode === 1) {
                 let prev = [];
                 let curr = [];
-                let predict = [];
-                data.predict.forEach((item) => {
-                    if (item.year === 2013) {
-                        predict.push(Math.round(item.weeklySales));
-                    }
-                });
+
                 data.truth.forEach((item) => {
                     if (item.year === 2011) {
                         prev.push(Math.round(item.weeklySales));
@@ -62,6 +58,11 @@ const Predict = () => {
                     if (item.year === 2012) {
                         curr.push(Math.round(item.weeklySales));
                     }
+                });
+
+                let predict = [...curr];
+                data.predict.forEach((item) => {
+                    predict.push(Math.round(item.weeklySales));
                 });
 
                 setWeeklySaleInYearData({ prev: prev, curr: curr, predict: predict });
@@ -102,8 +103,12 @@ const Predict = () => {
         try {
             setLoading(true);
             const res = await axios.get("http://127.0.0.1:8005/run/predict");
+            console.log(res.data);
             if (res.data.resultCode === 1) {
                 setSuccess(true);
+                setCurrentWeek(res.data.current_week);
+                setWeek1(res.data.current_week + 1);
+                setWeek2(res.data.current_week + 1);
             }
         } catch (error) {
             setError(true);
@@ -159,6 +164,7 @@ const Predict = () => {
                 <p>An error occurred during prediction!</p>
             ) : (
                 <>
+                    <h4>Current week: {currentWeek}</h4>
                     <div className='predict-chart'>
                         {weeklySaleInYearLoading ? (
                             <Spinner />
@@ -191,7 +197,7 @@ const Predict = () => {
                                             backgroundColor: "rgba(54, 162, 235, 0.2)",
                                         },
                                         {
-                                            label: "2013",
+                                            label: "2012 (predict)",
                                             data: weeklySaleInYearData.predict,
                                             borderColor: "rgb(75, 192, 192)",
                                             backgroundColor: "rgba(75, 192, 192, 0.2)",
@@ -223,7 +229,16 @@ const Predict = () => {
                                 <div>
                                     <OptionField>
                                         <Title1>Select week</Title1>
-                                        <Select datas={weeks} current={week1} handleChange={handleChangeWeek1} />
+                                        <Select
+                                            datas={[
+                                                { value: `${currentWeek + 1}`, label: `${currentWeek + 1}` },
+                                                { value: `${currentWeek + 2}`, label: `${currentWeek + 2}` },
+                                                { value: `${currentWeek + 3}`, label: `${currentWeek + 3}` },
+                                                { value: `${currentWeek + 4}`, label: `${currentWeek + 4}` },
+                                            ]}
+                                            current={week1}
+                                            handleChange={handleChangeWeek1}
+                                        />
                                     </OptionField>
                                 </div>
                             </GridTwo>
@@ -250,7 +265,16 @@ const Predict = () => {
                                 <div>
                                     <OptionField>
                                         <Title1>Select week</Title1>
-                                        <Select datas={weeks} current={week2} handleChange={handleChangeWeek2} />
+                                        <Select
+                                            datas={[
+                                                { value: `${currentWeek + 1}`, label: `${currentWeek + 1}` },
+                                                { value: `${currentWeek + 2}`, label: `${currentWeek + 2}` },
+                                                { value: `${currentWeek + 3}`, label: `${currentWeek + 3}` },
+                                                { value: `${currentWeek + 4}`, label: `${currentWeek + 4}` },
+                                            ]}
+                                            current={week2}
+                                            handleChange={handleChangeWeek2}
+                                        />
                                     </OptionField>
                                     <OptionField>
                                         <Title1>Select store</Title1>

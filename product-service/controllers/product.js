@@ -3,7 +3,7 @@ const { PORT, BASE_URL, NOT_FOUND } = require("../config");
 const fs = require("fs");
 
 const index = async (req, res) => {
-    const products = await Product.find().populate("category").lean();
+    const products = await Product.find().sort({ created_at: -1 }).populate("category").lean();
     return res.send({ status: 1, result: products });
 };
 

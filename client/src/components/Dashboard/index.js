@@ -17,7 +17,14 @@ import { selectStore } from "../../redux/storeSlice";
 
 const Dashboard = () => {
     let match = useRouteMatch();
-    const role = useSelector((state) => state.auth.user.role.slug);
+    // const role = useSelector((state) => state.auth.user.role.slug);
+    let user = useSelector((state) => state.auth.user);
+    const stores = useSelector((state) => state.store.stores);
+    stores.forEach((store) => {
+        if (store.id === user.storeId) {
+            user = { ...user, storeName: store.name };
+        }
+    });
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -30,7 +37,7 @@ const Dashboard = () => {
             <Sidebar match={match} />
             <div className='main-content'>
                 <main>
-                    {role === "giam-doc" && <Store />}
+                    {user.role.slug === "giam-doc" ? <Store /> : <p>{user.storeName}</p>}
                     <Switch>
                         <Route exact path={`${match.url}`} component={Overview} />
                         <Route path={`${match.url}/predict`} component={Predict} />
